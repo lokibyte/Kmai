@@ -1,0 +1,72 @@
+<ion-card class="rec_job_card" [ngClass]="{'success':job.status == 'accepted','pending':job.status == 'pending','rejected':job.status == 'rejected',} ">
+  <ion-item lines="none">
+    <ion-avatar slot="start" class="imgavatar">
+      <img [src]="'assets/icon/c_logo.svg'">
+    </ion-avatar>
+    <ion-label class="recent">
+      {{job?.company}}
+      <p style="color: rgba(17, 24, 18, 0.5);font-weight: 400;font-size: 12px;">
+         {{job?.location}} 
+      </p>
+    </ion-label>
+    <ion-text slot="end" class="rec_job_icons" mode="ios">
+      <span style="font-weight: 600;">{{job?.rating}} <ion-icon src="assets/icon/Star.svg"></ion-icon> <ion-icon src="assets/icon/thrash.svg" style="margin-left: 8px;"></ion-icon></span>
+    </ion-text>
+  </ion-item>
+  <div>
+    <div style="background: #F9F8FD;margin-top: 8px;padding: 8px 0px;border-radius: 7px;" >
+      <div style="margin-left: 12px;display: flex;align-items: baseline;justify-content: space-between;padding-right: 8px;">
+        <div style="margin-left: 12px;font-size: 16px;font-weight: 700;padding-bottom: 5px;color:#111812">{{job?.post}}</div>
+        <div style="color:#111812;font-size: 12px;" >Posted <span style="font-weight: 500;" [ngStyle]="{'color':job?.posted=='Just Now'? '#f59300':''}">{{job?.posted}}</span></div>
+      </div>
+      <div style="padding-left: 12px;font-weight: 500;margin-left: 12px;margin-bottom: 5px;font-size: 14px;">₹{{job?.salary}}</div>
+      <div class="btm_text_lbl">
+        <div style="margin-left: 12px;">
+          <ion-chip>
+            {{job?.type}}
+          </ion-chip>
+          <ion-chip>
+            {{job?.position}}
+          </ion-chip>
+        </div>
+        <div ><ion-button mode="md" size="small" style="font-size: 0.65rem;" class="ion-text-capitalize">{{job?.status}}</ion-button></div>
+      </div>
+      <!-- <div class="btm_text_lbl" slot="start">
+        <div style="margin-left: 12px;font-size: 18px;font-weight: 600;padding-bottom: 5px;">{{job?.post}}</div>
+        <div style="font-weight: 500;margin-left: 12px;margin-bottom: 5px;font-size: 14px;">₹{{job?.salary}}</div>
+        <ion-chip>
+          {{job?.type}}
+        </ion-chip>
+        <ion-chip>
+          {{job?.position}}
+        </ion-chip>
+        
+      </div>
+      <div style="width: 100%;text-align: end;">
+        <div style="color:#111812;font-size: 12px;margin-top: 8px;" >Posted <span style="font-weight: 500;" [ngStyle]="{'color':job?.posted=='Just Now'? '#f59300':''}">{{job?.posted}}</span></div>
+        <ion-button slot="end" mode="md" size="small" style="margin-top: 25px;font-size: 0.65rem;" class="ion-text-capitalize">{{job?.status}}</ion-button>
+      </div> -->
+    </div>
+    
+    
+  </div>
+</ion-card>
+<!-- <ion-card class="ion-no-margin" style="padding:8px;" [ngClass]="{'success':job.status == 'Shortlisted','pending':job.status == 'Pending','rejected':job.status == 'Rejected',} ">
+  <div class="job_title">
+    {{job.title}}
+  </div>
+  <div class="budget_container">
+    <span>
+      <div>{{job.budget}}</div>
+      <div class="gray">Budget</div>
+    </span>
+    <span>
+      <div>{{job.exp}}</div>
+      <div class="gray">Experience Level</div>
+    </span>
+  </div>
+  <div class="bottom_cls">
+    <span class="verified_cls"><ion-icon style="font-size: 1.5rem;" src="assets/icon/verified.svg"></ion-icon> <span class="verified_txt">{{job.verified=='true' ? "Verified Payment":"Non Verified"}}</span></span>
+    <ion-button size="small" class="easyapply_btn" slot="end" mode="md" style="text-transform: initial;">{{job.status}}</ion-button>
+  </div>
+</ion-card> -->

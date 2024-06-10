@@ -1,0 +1,46 @@
+.searchbox{
+  border: 1px solid #a5a5a5;
+  border-radius: 20px;
+  margin: 10px 16px;
+  display: flex;
+  align-items: center;
+  padding: 2px 5px;
+}
+.searchinput{
+  height: 40px;
+  width: 80%;
+  border: 0px !important;
+  background: #fff !important;
+  color: #000;
+  
+}
+.lightbackground{
+  background: #fff;
+}
+.searchinput:focus,.searchinput:focus-visible{
+  border: #fff;
+  outline: 0px;
+}
+.seach_font_sz{
+  font-size:1.5rem
+}
+.cateoryitem{
+  --min-height: 85px;
+  --background: #F9F8FD;
+  border-radius: 7px;
+  margin-bottom: 16px;
+}
+.categorylbl{
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'intermedium';
+}
+ion-checkbox {
+  --size: 26px;
+  --checkbox-background-checked: #F59300;
+}
+
+ion-checkbox::part(container) {
+  border-radius: 6px;
+  border: 2px solid #F59300;
+}

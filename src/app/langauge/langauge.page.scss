@@ -1,0 +1,94 @@
+ion-content{
+    --background: #f5f6f9;
+    --padding-start:8px;
+    --padding-end:8px;
+    .backbtn{
+        padding-top: 10px;
+        font-size: 1.5rem;
+    }    
+    .welcome_lbl_container{
+        margin-bottom: 3%;
+        margin-top: 3%;
+        text-align: center;
+    }
+    .welcome_txt{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    .description_txt{
+        font-size: 0.8rem;
+        font-weight: 300;
+        font-style: italic;
+        color: #434242;
+    }
+}
+.app_title{
+    font-weight: bold;
+    font-size: 1.5rem;
+    background: linear-gradient(122deg, #1602FF 0%,#1602FF 40%, #D195F9 60%, #D195F9 100%);
+	-webkit-background-clip: text; 
+	-webkit-text-fill-color: transparent; 
+	-webkit-box-decoration-break: clone;
+}
+.item{
+    // border: 1px solid #b2b2b2;
+    padding: 8px;
+    width: 45%;
+    border-radius: 30px;
+    margin: 5px 10px;
+}
+.center{
+    text-align: center;
+}
+.lang_pref_lbl{
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #161515;
+    padding: 10px;
+  }
+.continuetbn{
+    height: 45px;
+    width: 60%;
+    margin-top: 2%;
+}
+
+.selected{
+    background: var(--ion-color-krypurple);
+    border: 1px solid var(--ion-color-krypurple);
+    font-weight: 500;
+}
+
+// ************* Custom radio button//
+ion-radio::part(container) {
+    width: 25px;
+    height: 25px;
+  
+    border-radius: 30px;
+    border: 2px solid #ddd;
+  }
+  
+  ion-radio::part(mark) {
+    background: none;
+    transition: none;
+    transform: none;
+    border-radius: 0;
+  }
+  
+  ion-radio.radio-checked::part(container) {
+    background: #fff;
+    border-color: transparent;
+  }
+  
+  ion-radio.radio-checked::part(mark) {
+    width: 8px;
+    height: 15px;
+  
+    border-width: 0px 2px 2px 0px;
+    border-style: solid;
+    border-color: var(--ion-color-krypurple);
+  
+    transform: rotate(45deg);
+  }
+  .bold{
+    font-weight: 500;
+  }

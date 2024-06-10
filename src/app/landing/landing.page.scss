@@ -1,0 +1,46 @@
+ion-content{
+    --background: url(../../assets/imgs/landing.png) 0 0/100% 100% no-repeat;
+    transition: background-color 0.2s ease-in-out;
+}
+.landing_text{
+    top: 60%;
+    position: relative;
+    margin: 0px 15px;
+    color: #D195F9;
+    font-weight: 700;
+    font-size: 32px;
+    font-family: 'interbold';
+    // font-size: 18px;
+    // zoom: 1.3;
+}
+.app_title{
+    padding-top: 6%;
+    font-weight: bold;
+    font-size: 1.8rem;
+    // background: linear-gradient(122deg, #1602FF 0%,#1602FF 40%, #D195F9 60%, #D195F9 100%);
+	// -webkit-background-clip: text; 
+	// -webkit-text-fill-color: transparent; 
+	// -webkit-box-decoration-break: clone;
+}
+.app_description{
+    font-weight: 200;
+    font-size: 12px;
+    font-style: italic;
+}
+.lang_select_container{
+    top: 58%;
+    position: relative;
+    margin: 0px 20px;
+    color: #111812;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: flex-end;
+}
+ion-fab-button{
+    bottom: 30px;
+    position: relative;
+    --background: #0033C7;
+  --background-activated: #0033C7;
+  --background-hover: #0033C7;
+    
+}

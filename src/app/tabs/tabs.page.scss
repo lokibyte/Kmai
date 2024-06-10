@@ -1,0 +1,34 @@
+ion-tab-bar {
+    // bottom: 20px;
+    // position: relative;
+    // border-radius: 16px;
+    // width: 92%;
+    // margin: 0 auto;
+    --background: var(--ion-color-xlight);
+  }
+  
+  ion-tab-button {
+    --color: var(--ion-color-icon);
+    --color-selected: var(--ion-color-primary);
+    // --color-selected: var(--ion-color-krypurple);
+  
+    &::before {
+      background-color: transparent;
+      display: block;
+      content: "";
+      margin: 0 auto;
+      width: 20px;
+      height: 2px;
+    }
+    &.tab-selected{
+      .tabicons{
+        font-size: 1.8rem;
+      }
+    }
+    &.tab-selected::before {
+      background-color: var(--ion-color-primary);
+          
+      // background-color: var(--ion-color-krypurple);
+    }
+  }
+  

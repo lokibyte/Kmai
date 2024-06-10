@@ -1,0 +1,68 @@
+<ion-content mode="md" class="ion-padding">
+  <div>
+    <div style="display: flex;align-items: center;justify-content: space-between;">
+        <div class="title_lbl">Location</div>
+        <div class="searchbox lightbackground">
+          <ion-icon style="margin: 0px 8px;" src="../../assets/icon/search.svg" class="seach_font_sz"></ion-icon>
+          <input class="searchinput" placeholder="Search your location" type="text" (input)="onSearchInputChange($event)" >
+          <ion-icon style="margin-right: 8px;" src="../../assets/icon/mic.svg" class="seach_font_sz" (click)="doSearchVoiceAction()"></ion-icon>
+      </div>
+    </div>
+    <div class="divcls location_chips">
+      <ion-chip class="btn" [outline]="true" mode="ios" *ngFor="let city of cities;let i=index" [class.selectedCls]="city.selected === true" (click)="onSelectLocation(city,i)">
+        <ion-label >{{city.name}}</ion-label>
+      </ion-chip>
+    </div>
+  </div>
+  <div>
+    <div class="title_lbl">Experience</div>
+    <div class="divcls location_chips">
+      <ion-chip class="btn" [outline]="true" mode="ios" *ngFor="let exp of exps;let i=index" [class.selectedCls]="exp.selected === true" (click)="onSelectExp(exp,i)">
+        <ion-label >{{exp.name}}</ion-label>
+      </ion-chip>
+      <ion-chip class="addbtn" mode="ios" fill="">
+        <ion-label >Add manually</ion-label>
+      </ion-chip>
+    </div>
+  </div>
+  <div>
+    <div class="title_lbl">Salary</div>
+    <div class="ion-padding-horizontal" style="margin-bottom: 10px;">
+      <ion-range aria-label="Range with pin" [pin]="true" [pinFormatter]="pinFormatter"  (ionChange)="onSalaryChange($event)" min="5"></ion-range>
+      <span style="color:rgba(17, 24, 18, 0.6);font-size:11px;font-weight:400">Min. 5k</span>
+    </div>
+  </div>
+  <div>
+    <div class="title_lbl">Job Type</div>
+    <div class="divcls location_chips">
+      <ion-chip class="btn" [outline]="true" mode="ios" *ngFor="let type of jobtypes;let i=index" [class.selectedCls]="type.selected === true" (click)="onSelectJobType(type,i)">
+        <ion-label >{{type.name}}</ion-label>
+      </ion-chip>
+    </div>
+  </div>
+  <div>
+    <div class="title_lbl">Education Level</div>
+    <div class="divcls location_chips">
+      <ion-chip class="btn" [outline]="true" mode="ios" *ngFor="let edc of education;let i=index" [class.selectedCls]="edc.selected === true" (click)="onSelectEdu(edc,i)">
+        <ion-label >{{edc.name}}</ion-label>
+      </ion-chip>
+    </div>
+  </div>
+  <div style="height: 80px;">
+    <div class="title_lbl">Industry (optional)</div>
+  </div>
+  <div>
+    <div class="title_lbl">Freshness / Date posted</div>
+    <div class="divcls location_chips">
+      <ion-chip class="btn" [outline]="true" mode="ios" *ngFor="let posted of posteddata;let i=index" [class.selectedCls]="posted.selected === true" (click)="onSelectDates(posted,i)">
+        <ion-label >{{posted.name}}</ion-label>
+      </ion-chip>
+    </div>
+  </div>
+</ion-content>
+<ion-footer mode="ios">
+  <ion-toolbar>
+    <ion-button slot="start" fill="clear" class="clearbtn btntxt" style="letter-spacing: 0.5px;" (click)="clearFilter()"><u>Clear</u></ion-button>
+    <ion-button mode="md" slot="end" class="btntxt" (click)="applyFilter()">See 300 results</ion-button>
+  </ion-toolbar>
+</ion-footer>

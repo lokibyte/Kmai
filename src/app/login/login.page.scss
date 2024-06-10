@@ -1,0 +1,49 @@
+ion-content{
+  --background: #f5f6f9;
+  --padding-start:8px;
+  --padding-end:8px;
+  .backbtn{
+      padding-top: 10px;
+      font-size: 1.5rem;
+  }    
+  .welcome_lbl_container{
+      margin-bottom: 4%;
+      margin-top: 3%;
+  }
+  .welcome_txt{
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'intersb';
+  }
+  .description_txt{
+    font-size: 16px;
+    font-weight: 500;
+    color: #939191;
+    padding: 3px 5px;
+    font-family: 'intermd';
+  }
+}
+.app_title{
+  font-weight: bold;
+  font-size: 1.5rem;
+  background:linear-gradient(to right, #273c8c 0%, #273c8c 70%, var(--ion-color-link) 50%);
+  // background: linear-gradient(122deg, #1602FF 0%,#1602FF 40%, #D195F9 60%, #D195F9 100%);
+-webkit-background-clip: text; 
+-webkit-text-fill-color: transparent; 
+-webkit-box-decoration-break: clone;
+}
+
+.center{
+  text-align: center;
+}
+.signupbtn{
+  height: 50px;
+  width: 40%;
+  text-transform: none;
+  font-size: 16px;
+  font-weight: 400;
+}
+.inputcls{
+  --highlight-color: var(--ion-color-primary);
+  --border-radius: 12px;
+}

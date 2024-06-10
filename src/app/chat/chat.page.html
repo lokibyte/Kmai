@@ -1,0 +1,65 @@
+<ion-header class="ion-no-border ion-no-padding" color="primary">
+  <ion-toolbar mode="md" class="ion-no-border" color="primary">
+    <ion-button slot="start" size="small" fill="clear" (click)="goBack()"> <ion-icon slot="icon-only" name="chevron-back" class="font15 ion-padding-horizontal backicon"></ion-icon></ion-button>
+    <ion-label class="title_container">
+      <ion-avatar style="height: 37px;width: 37px;margin-right: 8px;">
+        <img src="../../assets/imgs/card-coworker-avatar.png" />
+      </ion-avatar>
+      <div>
+        <div class="username">Arun Kumar</div>
+        <div class="role">HR at XYZ Company</div>
+      </div>
+    </ion-label>
+    <ion-label mode="ios" slot="end" size="small" fill="clear">
+      <ion-icon class="phone_ico" src="../../assets/icon/phone.svg"></ion-icon>
+      <ion-icon class="vid_ico" src="../../assets/icon/video.svg"></ion-icon>
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="" color="primary" style="--padding-top: 16px;">
+  <div style="text-align: center;height: 100%;border-radius: 50px 50px 0 0;background:#fff;" class="ion-no-margin ion-no-padding">
+    <ion-list lines="none">
+      
+      <div class="ion-padding">
+        <div class="me">
+          <div class="msg" style="font-size:12px;font-weight: 500;">Hi! John Doe. I hope you’re doing well :)</div>
+          <div style="font-size:12px;font-weight: 500;color:rgba(17, 24, 18, 0.6);text-align: left;margin-top: 5px;">10 mins ago</div>
+        </div>
+      </div>
+      
+      <div class="ion-padding" style="display: flex;justify-content: end;">
+        <div class="other ion-float-right" style="display: flex;flex-direction: row-reverse;align-items: flex-end;">
+          <div class="msg" style="font-size:12px;font-weight: 500;">Hi! Arun, I’m doing great and I hope you’re doing as well :)</div>
+          <div style="font-size:12px;font-weight: 500;color:rgba(17, 24, 18, 0.6);text-align: left;margin-top: 5px;"></div>
+        </div>
+      </div>
+      
+      <div class="ion-padding">
+        <div class="me">
+          <div class="msg" style="font-size:12px;font-weight: 500;">I understand you're looking for a job in delivery on a contractual basis?</div>
+          <div style="font-size:12px;font-weight: 500;color:rgba(17, 24, 18, 0.6);text-align: left;margin-top: 5px;">10 mins ago</div>
+        </div>
+      </div>
+      
+      <div class="ion-padding" style="display: flex;">
+        <div class="other ion-float-right" style="display: flex;flex-direction: row-reverse;align-items: flex-end;">
+          <div class="msg" style="font-size:12px;font-weight: 500;">Yes, that's correct. I have over 5 years of experience in delivery, and I'm looking for something flexible that fits my schedule.</div>
+          <div style="font-size:12px;font-weight: 500;color:rgba(17, 24, 18, 0.6);text-align: left;margin-top: 5px;"></div>
+        </div>
+      </div>
+
+    </ion-list>
+  </div>
+
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar class="ion-no-border" color="xlight" mode="md">
+    <div style="display: flex;">
+      <ion-icon style="font-size: 1.5rem;padding: 6px 7px;" src="../../assets/icon/mic.svg"></ion-icon>
+      <ion-icon style="font-size: 1.5rem;padding: 6px 7px;" src="../../assets/icon/media.svg"></ion-icon>
+      <ion-input class="chatinput" enterkeyhint="send" mode="ios" placeholder="Chat with your recruiter here"></ion-input>
+      <ion-icon style="font-size: 2.5rem;padding: 0px 5px;" src="../../assets/icon/message.svg"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,143 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="ion-no-border" color="krygray">
+    <div class="toolbar_header_top">
+      <div style="display: flex;align-items: center;justify-content: space-between;width: 100%;padding: 0px 10px;">
+        <div>
+          <img src="assets/icon/Kamai.png" style="width:100px;"/>
+        </div>
+        <div style="font-size: 12px;font-weight: 700;color: #111812;padding-top: 1.3rem;">
+          <ion-text>Welcome, <span>John Doe!</span></ion-text>
+          <div style="display: flex;align-items: center;justify-content: end;width: 100%;padding: 0px;margin: 0px;">
+              <ion-icon style="font-size: 1.4rem;padding-right: 7px;padding-top: 6px;" src="../../assets/icon/lang_ic.svg" (click)="changeLanguage()"></ion-icon>
+              <ion-icon class="1lang_icon msg_ico" src="../../assets/icon/message.svg" (click)="goToMessages()"></ion-icon>
+          </div>
+        </div>
+      </div>
+      
+      
+
+      <!-- <div > 
+        <div class="app_title" translate>app.title</div>
+      </div> -->
+      <!-- <div class="tb_right_container1" style="font-size: 12px;font-weight: 700;">
+        <div class="user_name1">
+          <ion-text>Welcome, <span style="font-weight: 600;">John Doe!</span></ion-text>
+        </div>
+        <div style="text-align: center;font-size: 1.5rem;">
+          <ion-icon class="lang_icon" src="../../assets/icon/lang_ic.svg" (click)="changeLanguage()"></ion-icon>
+          <ion-icon class="lang_icon msg_ico" src="../../assets/icon/message.svg" (click)="goToMessages()"></ion-icon>
+        </div>
+      </div> -->
+
+    </div>
+    <div class="searchbox lightbackground">
+        <ion-icon style="margin: 0px 8px;" src="../../assets/icon/search.svg" class="seach_font_sz"></ion-icon>
+        <input class="searchinput" placeholder="Search at KAMAi" type="text" (click)="goToSearch()" >
+        <ion-icon style="margin-right: 8px;" src="../../assets/icon/mic.svg" class="seach_font_sz" (click)="doSearchVoiceAction()"></ion-icon>
+        <ion-icon src="../../assets/icon/filter.svg" class="seach_font_sz" (click)="doFilterAction()"></ion-icon>
+        <!-- <input class="searchinput" placeholder="Search at KAMAi" type="text" (input)="onSearchInputChange($event)" >
+        <input class="searchinput" placeholder="Search at KAMAi" type="text" (input)="onSearchInputChange($event)" >
+        <ion-icon style="margin-right: 8px;" src="../../assets/icon/mic.svg" class="seach_font_sz" (click)="doSearchVoiceAction()"></ion-icon>
+        <ion-icon src="../../assets/icon/filter.svg" class="seach_font_sz" (click)="doFilterAction()"></ion-icon> -->
+    </div>
+  </ion-toolbar>
+  
+</ion-header>
+ 
+<ion-content [fullscreen]="true" class="" color="krygray">
+ 
+  @if (recomendedjobs.length > 0) { 
+    <ion-list lines="none" class="recentJobs">
+
+      <div style="display: flex;align-items: center;margin: 0px 16px;justify-content: space-between;">
+        <ion-label class="jobs_lbl">
+          Recommended Jobs
+        </ion-label>
+        <ion-button fill="clear" size="small" color="medium" mode="ios">
+          <ion-text class="show_all" (click)="showAllRecomendedJobs()">
+            Show all
+          </ion-text>
+        </ion-button>
+      </div> 
+
+      @for (job of recomendedjobs; track job.id) {
+        <!-- <ion-item class="ion-margin-bottom" [routerLink]="['/', 'tabs', 'job', job.id]"> -->
+        <ion-card class="rec_job_card" (click)="onJobClick()">
+          <div style="width: 100%;display: flex;padding-top: 8px;">
+            <ion-avatar slot="start" class="imgavatar">
+              <img [src]="'assets/icon/c_logo.svg'">
+            </ion-avatar>
+            <div class="recent1" style="flex: 1;margin-left: 8px;">
+              <div style="font-size: 16px;font-weight: 700;color:#4B4B4B;font-family: 'interbold';">
+                {{job?.company}}
+              </div>
+              <div style="color: rgba(17, 24, 18, 0.5);font-weight: 400;font-size: 12px;">
+                 {{job?.location}} 
+              </div>
+            </div>
+            <div slot="end" class="rec_job_icons" mode="ios">
+              <span style="font-weight: 600;margin-right: 16px;">{{job?.rating}} <ion-icon src="assets/icon/Star.svg"></ion-icon></span>
+              <span class="ribbon" *ngIf="job.hiring=='active'">
+                Actively hiring
+                <span class="icon"><ion-icon src="assets/icon/flame.svg"></ion-icon></span>
+              </span>
+            </div>
+          </div>
+          <div>
+            <ion-item style="--background: #F9F8FD;">
+              <div class="btm_text_lbl" slot="start">
+                <div style="margin-left: 12px;font-size: 18px;font-weight: 600;padding-bottom: 5px;">{{job?.post}}</div>
+                <div style="font-weight: 500;margin-left: 12px;margin-bottom: 5px;font-size: 14px;">₹{{job?.salary}}</div>
+                <ion-chip>
+                  {{job?.type}}
+                </ion-chip>
+                <ion-chip>
+                  {{job?.position}}
+                </ion-chip>
+                
+              </div>
+              <div style="width: 100%;text-align: end;">
+                <div style="color:#111812;font-size: 12px;margin-top: 8px;">Posted <span style="font-weight: 500;" [ngStyle]="{'color':job?.posted=='Just Now'? '#f59300':''}">{{job?.posted}}</span></div>
+                <ion-icon slot="end" src="assets/icon/fwd_ico.svg" style="margin-top: 35px;height: 33px;width: 33px;"></ion-icon>
+              </div>
+              <!-- <ion-button size="small" class="easyapply_btn" slot="end" mode="md" style="text-transform: initial;" (click)="easyApply($event, job)">Easy apply</ion-button> -->
+            </ion-item>
+            
+            
+          </div>
+        </ion-card>
+      }
+
+    </ion-list>
+  }
+  <ion-list lines="none" class="" color="krygray">
+      <ion-label class="sample_hdr_lbl">
+        Train yourself with sample videos
+      </ion-label>
+      <ion-item class="video_container_item" color="krygray">
+        <ion-card slot="start" class="video_card">
+          <video controls style="height: 100%;width: 100%;object-fit: cover;">
+            <source src="https://videos.pexels.com/video-files/3209663/3209663-uhd_3840_2160_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+         </video>
+         <div class="overlay">
+          <span>Play video for the reference</span>
+         </div>
+        </ion-card>
+        <ion-card slot="start" class="video_card">
+          <video controls style="height: 100%;width: 100%;object-fit: cover;">
+            <source src="https://videos.pexels.com/video-files/3209663/3209663-uhd_3840_2160_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+         </video>
+         <div class="overlay">
+          <span>Play video for the reference</span>
+         </div>
+        </ion-card>
+        <!-- <div slot="end" class="video_help_txt">
+          <div class="video_help_header">Confused?</div>
+          <div class="video_help_desc1">How to get ready for the video resume?</div>
+          <p class="video_help_desc2">Don’t worry, we got you. <ion-text class="video_hint_text">Click this video</ion-text> to see the reference</p>
+        </div> -->
+      </ion-item>
+    </ion-list>
+</ion-content>

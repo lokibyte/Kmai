@@ -1,0 +1,87 @@
+ion-toolbar{
+    --background:#F9F8FD;
+}
+.clearbtn{
+    --color: rgba(17, 24, 18, 0.6);
+    
+}
+.btntxt{
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'intersemibold';
+    text-transform: none;
+    --padding-end: 16px;
+    --padding-start: 16px;
+}
+.title_lbl{
+    color: #111812;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'interbold';
+    padding-left: 5px;
+    margin-bottom: 2%;
+}
+.searchbox{
+    border: 1px solid #a5a5a5;
+    border-radius: 20px;
+    margin: 10px 16px;
+    display: flex;
+    align-items: center;
+    padding: 2px 5px;
+  }
+  .searchinput{
+    height: 35px;
+    width: 85%;
+    border: 0px !important;
+    background: #fff !important;
+    color: #000;
+    
+  }
+  .lightbackground{
+    background: #fff;
+  }
+  .searchinput:focus,.searchinput:focus-visible{
+    border: #fff;
+    outline: 0px;
+  }
+  .seach_font_sz{
+    font-size:1.5rem
+  }
+  .divcls{
+    padding: 0px 0px 20px 0px;
+  }
+  .divcls {
+    
+    .btn {
+      display: inline-block;
+      font-size: 14px;
+      height: 27px;
+      font-weight: 600;
+      border-color: var(--ion-color-krypurple-tint);
+      color:var(--ion-color-krypurple-tint);
+      font-family: 'intersemibold';
+    }
+    .selectedCls{
+        background-color:rgba(245, 147, 0, 0.2);
+        color:#F59300;
+    }
+  }
+  .addbtn{
+    --background:var(--ion-color-primary);
+    --color:#fff;
+    text-transform: none;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'intersemibold';
+  }
+  ion-range {
+    --bar-background: #130160;
+    --bar-background-active: #130160;
+    --bar-height: 5px;
+    --bar-border-radius: 8px;
+    --knob-background: #F59300;
+    --knob-size: 30px;
+    --pin-background: #130160;
+    --pin-color: #fff;
+    padding-top: 0px;
+  }

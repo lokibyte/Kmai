@@ -1,0 +1,25 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="ion-no-border" color="xlight">
+    <div style="height: 30px;">
+    </div>
+    <div class="searchbox lightbackground">
+        <ion-icon style="margin: 0px 8px;" src="../../assets/icon/search.svg" class="seach_font_sz"></ion-icon>
+        <input class="searchinput" placeholder="Search at KAMAi" type="text" (input)="onSearchInputChange($event)" >
+        <ion-icon style="margin-right: 8px;" src="../../assets/icon/mic.svg" class="seach_font_sz" (click)="doSearchVoiceAction()"></ion-icon>
+        <ion-icon src="../../assets/icon/filter.svg" class="seach_font_sz" (click)="doFilterAction()"></ion-icon>
+    </div>
+  </ion-toolbar>
+  
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+  <ion-list>
+    <ion-list-header>
+      <ion-label style="font-size:16px;font-weight:500;font-family: 'intersemibold';">Job Category</ion-label>
+    </ion-list-header>
+    <ion-item class="cateoryitem" lines="none" *ngFor="let category of jobcategoeis">
+      <ion-icon src="assets/icon/category/{{category.logo}}" slot="start"></ion-icon>
+      <ion-checkbox class="categorylbl" mode="md"> {{category.name}} </ion-checkbox>
+      
+    </ion-item>
+    </ion-list>
+</ion-content>

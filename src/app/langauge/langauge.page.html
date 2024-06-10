@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true" >
+  <div>
+    <!-- <ion-icon name="arrow-back" mode="md" class="backbtn" (click)="goBack()"></ion-icon> -->
+    <ion-icon name="close-outline" mode="md" class="backbtn" (click)="goBack()" style="float: right;"></ion-icon>
+  </div>
+  <div class="welcome_lbl_container ion-padding">
+    <div class="welcome_txt" translate>app.language.welcome_to <span class="app_title" translate>app.title</span></div>
+    <div class="description_txt" translate>app.language.choose_lang</div>
+  </div>
+  <ion-radio-group [value]="selectedlang" mode="md" class="ion-justify-content-center" (ionChange)="onLanguageChange($event)">
+    <div class="center bold"> <ion-radio value="en" [class.selected]="selectedlang === 'en'" class="item" translate>app.english</ion-radio></div>
+    <div class="center bold"> <ion-radio value="de" [class.selected]="selectedlang === 'de'" class="item" translate>app.malayalam</ion-radio></div>
+    <div class="center bold"> <ion-radio value="hi" [class.selected]="selectedlang === 'hi'" class="item" translate>app.hindi</ion-radio></div>
+    <div class="center bold"> <ion-radio value="te" [class.selected]="selectedlang === 'te'" class="item" translate>app.telugu</ion-radio></div>
+    <div class="center bold"> <ion-radio value="ur" [class.selected]="selectedlang === 'ur'" class="item" translate>app.urdu</ion-radio></div>
+    <div class="center bold"> <ion-radio value="ta" [class.selected]="selectedlang === 'ta'" class="item" translate>app.tamil</ion-radio></div>
+    <div class="center bold"> <ion-radio value="kn" [class.selected]="selectedlang === 'kn'" class="item" translate>app.konkani</ion-radio></div>
+    <div class="center bold"> <ion-radio value="ka" [class.selected]="selectedlang === 'ka'" class="item" translate>app.kannada</ion-radio></div>
+    <div class="center bold"> <ion-radio value="or" [class.selected]="selectedlang === 'or'" class="item" translate>app.oriya</ion-radio></div>
+  </ion-radio-group>
+  <div class="center lang_pref_lbl"> 
+    Your language preference can be changed at any time in Settings.
+  </div>
+  <!-- <div class="center"><ion-button mode="md" size="default" fill="solid"  shape="round" class="continuetbn ion-margin" (click)="gotoLogin()">Continue</ion-button></div> -->
+  <div class="center"><ion-button mode="md" size="default" fill="solid"  shape="round" class="continuetbn ion-margin" (click)="gotoLogin()">Save</ion-button></div>
+</ion-content>

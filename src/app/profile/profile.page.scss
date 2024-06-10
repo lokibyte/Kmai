@@ -1,0 +1,160 @@
+ion-content{
+  --background:var(--ion-color-light);
+  ion-toolbar{
+    --background: var(--ion-color-light);
+  }
+  ion-list{
+    --background:var(--ion-color-light);
+    ion-item{
+      --background:var(--ion-color-light);
+    }
+  }
+  
+}
+ion-avatar{
+  height: 105px;
+  width: 105px;
+}
+.fonticon{
+  font-size: 1.2rem;
+}
+.personal_info{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    color: #555252;
+    font-size: 16px;
+    font-weight: 450;
+    margin-left: 5%;
+    width: 100%;
+}
+.mar10{
+  margin-left: 10px;
+}
+.username_info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 16px;
+  width: 100%;
+}
+.username{
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.setting_ico{
+  font-size: 1.9rem;
+}
+.create_vid_res_card{
+  background-color: var(--ion-color-dark);
+  height: 95px;
+  margin: 18px 0px;
+  padding: 15px 15%;
+  display: flex;
+  align-items: center;
+}
+.create_vid_txt{
+  font-size: 13px;
+  font-weight: 800;
+  color:var(--ion-color-krypurple);
+}
+.get_start_txt{
+  font-size: 12px;
+  font-weight: 600;
+  color:var(--ion-color-krypurple);
+  margin-top: 10px;
+}
+
+.resume_btns{
+  height: 28px;
+  font-size: 10px;
+  margin-left: 10px;
+}
+.text_resumebtn{
+  --background: var(--ion-color-link);
+}
+.resume_card{
+  background:var(--ion-color-light);
+  box-shadow: none;
+}
+.mic_ico{
+  font-size: 1.4rem;
+  color:var(--ion-color-dark);
+}
+.career_card{
+  background:var(--ion-color-light);
+  box-shadow: none;
+  margin-top:5px;
+}
+.education_card{
+  background:var(--ion-color-light);
+  box-shadow: none;
+  margin-top: 10px;
+}
+.skills_card{
+  background:var(--ion-color-light);
+  box-shadow: none;
+  margin-top: 10px;
+}
+.language_card{
+  background:var(--ion-color-light);
+  box-shadow: none;
+  margin-top: 10px;
+}
+.certificate_card{
+  background:var(--ion-color-light);
+  box-shadow: none;
+  margin-top: 10px;
+}
+
+// video card css
+ion-item{
+  --background:var(--ion-color-light);
+  margin-top: 10px;
+}
+ion-list{
+  --background:var(--ion-color-light);
+  background:var(--ion-color-light) !important;
+}
+.sample_hdr_lbl{
+  font-weight: 800;
+    font-size: 14px !important;
+    line-height: 17px;  
+    margin-left: 16px; 
+    color: #4B4B4B;
+}
+.video_container_item{
+  display: flex;
+  align-items: baseline;
+}
+.video_card{
+  border: 1px solid;
+  width: 60%;
+  height: 112px;
+  background: var(--ion-color-light);
+  box-shadow: none;
+}
+.overlay {
+  position: absolute;
+  bottom: 2px;
+  left: 15px;
+  z-index: 1;
+  color: #fff;
+  font-weight: 400;
+  font-size: 12px;
+}
+.video_help_txt{
+  font-size: 12px;
+}
+.video_help_header{
+  font-size: 14px !important;
+  font-weight: 600;
+  color:var(--ion-color-primary);
+}
+.video_hint_text{
+  color:var(--ion-color-primary);
+  font-style: italic;
+}
+.video_help_desc2{
+  margin-top: 5px;
+}

@@ -1,0 +1,146 @@
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header class="ion-no-border">
+    <ion-toolbar></ion-toolbar>
+  </ion-header>  
+  <div style="display: flex;align-items: center;">
+    <div>
+      <ion-avatar slot="start">
+      <img alt="user" src="../../assets/imgs/card-coworker-avatar.png" />
+    </ion-avatar>
+  </div>
+    <div style="margin-left: 16px;width: 100%;margin-right: 16px;padding-left: 8px;margin-bottom: 16px;">
+      <div class="username_info">
+        <ion-label slot="end" class="username">Hello, John Doe</ion-label>
+        <ion-icon src="assets/icon/settings.svg" slot="end" class="setting_ico" (click)="goToSettings()"></ion-icon>
+      </div>
+
+      <div class="personal_info">
+        <ion-icon aria-hidden="true" name="mail-outline" slot="start" class="fonticon"></ion-icon>
+        <ion-label class="mar10">xyz&#64;test.com</ion-label>
+      </div>
+      <div class="personal_info">
+        <ion-icon aria-hidden="true" name="call-outline" slot="start" class="fonticon"></ion-icon>
+        <ion-label class="mar10">+91-8089975628</ion-label>
+      </div>
+      <div class="personal_info">
+        <ion-icon aria-hidden="true" name="location-outline" slot="start" class="fonticon"></ion-icon>
+        <ion-label class="mar10">HiTech City,Hyderabad</ion-label>
+      </div>
+      <div class="personal_info">
+        <ion-icon aria-hidden="true" src="assets/icon/linkedin.svg" slot="start" class="fonticon"></ion-icon>
+        <ion-label class="mar10">Linkedin Member</ion-label>
+      </div>
+    </div>
+  </div>
+  
+  <ion-card class="ion-no-margin resume_card">
+    <ion-card-content class="ion-no-padding">
+      <div style="font-size: 16px;font-weight: 700;padding-top: 8px;margin-left:12px;color:var(--ion-color-dark);">Video resume</div>
+      <div style="font-size: 12px;font-weight: 400;padding: 0px 10px 10px;">Add a perosnal summary to your profile as a way to introduce who you are.</div>
+    </ion-card-content>
+  
+    <ion-button mode="ios" size="small" class="resume_btns" fill="solid" (click)="recordideoResume()">Record video resume</ion-button>
+    
+  </ion-card>
+  
+  <ion-card class="ion-no-margin resume_card">
+    <ion-card-content class="ion-no-padding">
+      <div style="font-size: 16px;font-weight: 700;padding-top: 8px;margin-left:12px;color:var(--ion-color-dark);">Text resume</div>
+      <div style="font-size: 12px;font-weight: 400;padding: 0px 10px 10px;">Add a perosnal summary to your profile as a way to introduce who you are.</div>
+    </ion-card-content>
+  
+    <ion-button mode="ios" size="small" class="text_resumebtn resume_btns" fill="solid">Upload Text resume</ion-button>
+    
+  </ion-card>
+  
+  
+  <ion-card class="ion-no-margin career_card">
+    <ion-card-content class="ion-no-padding">
+      <div style="font-size: 16px;font-weight: 700;padding: 5px 10px;color:var(--ion-color-dark);">Work experience</div>
+      <div style="font-size: 12px;font-weight: 400;padding: 0px 10px 10px;">Highlight your experience to employers</div>
+    </ion-card-content>
+  
+    <ion-button mode="ios" size="small" class="resume_btns" fill="outline" (click)="addWorkExperience()">Add Work Experience</ion-button>
+    
+    
+  </ion-card>
+  
+  <ion-card class="ion-no-margin education_card">
+    <ion-card-content class="ion-no-padding">
+      <div style="font-size: 16px;font-weight: 700;padding: 5px 10px;color:var(--ion-color-dark);">Education</div>
+      <div style="font-size: 12px;font-weight: 400;padding: 0px 10px 10px;">
+        <div class="ed_details" style="display: grid;margin-left: 12  px;color:#000;">
+          <span style="font-weight: 500;font-size: 16px;">
+            Class 12th
+          </span>
+          <span>
+        XYZ School, India
+          </span>
+          <span>
+            2016-2018 | Full-time
+          </span>
+        </div>
+      </div>
+    </ion-card-content>
+    <ion-button mode="ios" size="small" class="resume_btns" fill="outline">Add Education</ion-button>
+  
+  </ion-card>
+
+  <ion-card class="ion-no-margin skills_card">
+    <ion-card-content class="ion-no-padding">
+      <div style="font-size: 16px;font-weight: 700;padding: 5px 10px;color:var(--ion-color-dark);">Skills</div>
+      <div style="font-size: 12px;font-weight: 400;padding: 0px 10px 10px;">Show employers what you are best at.</div>
+    </ion-card-content>
+  
+    <ion-button mode="ios" size="small" class="resume_btns" fill="outline" (click)="addSkills()">Add skills</ion-button>
+    
+  </ion-card>
+  
+  <ion-card class="ion-no-margin language_card">
+    <ion-card-content class="ion-no-padding">
+      <div style="font-size: 16px;font-weight: 700;padding: 5px 10px;color:var(--ion-color-dark);">Languages</div>
+      <div style="font-size: 12px;font-weight: 400;padding: 0px 10px 10px;">Know more than 1 language? Add languages to appeal to the employers.</div>
+    </ion-card-content>
+  
+    <ion-button mode="ios" size="small" class="resume_btns" fill="outline" (click)="addLanguage()">Add Language</ion-button>
+    
+  </ion-card>
+    
+  <ion-card class="ion-no-margin certificate_card">
+    <ion-card-content class="ion-no-padding">
+      <div style="font-size: 16px;font-weight: 700;padding: 5px 10px;color:var(--ion-color-dark);">Certification</div>
+      <div style="font-size: 12px;font-weight: 400;padding: 0px 10px 10px;">Showcase your licenses, certificates, memberships, etc.</div>
+    </ion-card-content>
+  
+    <ion-button mode="ios" size="small" class="resume_btns" fill="outline" (click)="addCertificate()">Add certification</ion-button>
+    
+  </ion-card>
+  
+  <ion-list lines="none" style="margin-top: 15px;">
+    <ion-label class="sample_hdr_lbl">
+      Train yourself with sample videos
+    </ion-label>
+    <ion-item class="video_container_item">
+      <ion-card slot="start" class="video_card">
+        <video controls style="height: 100%;width: 100%;">
+          <source src="https://videos.pexels.com/video-files/3209663/3209663-uhd_3840_2160_25fps.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+       </video>
+       <div class="overlay">
+        <span>Play video for the reference</span>
+       </div>
+      </ion-card>
+      <ion-card slot="start" class="video_card">
+        <video controls style="height: 100%;width: 100%;object-fit: cover;">
+          <source src="https://videos.pexels.com/video-files/3209663/3209663-uhd_3840_2160_25fps.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+       </video>
+       <div class="overlay">
+        <span>Play video for the reference</span>
+       </div>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

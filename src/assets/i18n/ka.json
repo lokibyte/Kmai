@@ -1,0 +1,35 @@
+{
+    "app":{
+        "title":"Kamai",
+        "english":"English",
+        "malayalam":"മലയാളം",
+        "hindi":"हिंदी",
+        "telugu":"తెలుగు",
+        "urdu":"اردو",
+        "tamil":"தமிழ்",
+        "konkani":"Konkani",
+        "kannada":"ಕನ್ನಡ",
+        "oriya":"Oriya",
+        "landing":{
+            "find_ur_dream_job":"KA_Find your dream job",
+            "find_ur_job_easily":"KA_Find your Dream Job Easily",
+            "choose_ur_pref_language":"KA_choose your preferred language"
+        },
+        "language":{
+            "welcome_to":"KA_Welcome to",
+            "choose_lang":"KA_Choose your Language"
+        },
+        "login":{
+            "welcome_back":"KA_Welcome Back",
+            "sing_in_to_accee_acc":"KA_Sign in to access your account",
+            "tenlakh_plus":"KA_10 lakh + job openings from best companies",
+            "email_lbl":"KA_Email",
+            "pwd_lbl":"KA_Password",
+            "emal_txt":"KA_Enter Email",
+            "pwd_txt":"KA_Enter Password"
+        },
+        "bookmark":{
+            "posted":"KA_Posted"
+        }
+    }
+}

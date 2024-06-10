@@ -1,0 +1,39 @@
+.font15{
+    font-size: 1.5rem;
+}
+
+.header_lbl{
+    color:#150B3D;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.msg_lbl{
+    font-size: 16px;
+    font-weight: 700;
+    padding-right: 8px;
+}
+ion-item{
+    --background:#F9F8FD;
+    margin: 8px;
+    border-radius: 7px;
+    color:rgba(17, 24, 18, 0.6);
+}
+
+  component-card .coworker-card p {
+    color: var(--text-light);
+  }
+  
+  .header_lbl{
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .time_lbl{
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    font-weight: 500;
+    top: 12px;
+    position: absolute;
+    right: 10px;
+  }

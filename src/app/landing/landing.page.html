@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true" class="background-image">
+  <div class="title_container ion-text-center" style="margin-right: 10%;margin-top: 4%;">
+    <!-- <div translate class="app_title">app.title</div> -->
+    <div translate class="app_title">
+      <!-- <ion-icon src="assets/icon/Kamai.svg" slot="end" class=""></ion-icon> -->
+      <img src="assets/icon/Kamai.png" style="width:120px;"/>
+      <div translate class="app_description" style="margin: -20px 0px 0px 57px;">app.landing.find_ur_dream_job</div>
+    </div>
+    
+  </div>
+  <div class="landing_text" style="color:var(--ion-color-primary)">Finding your <div style="color:var(--ion-color-link)">Perfect career path</div> <div>starts here</div></div>
+  <!-- <div class="lang_select_container" (click)="openChooseLangModal()">
+    <ion-text translate>app.landing.choose_ur_pref_language</ion-text>
+    <ion-icon name="caret-down"></ion-icon>
+  </div> -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button color="primary" (click)="goToLoginPage()">
+      <ion-icon style="color:var(--ion-color-link)" name="arrow-forward-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
