@@ -1,0 +1,41 @@
+ion-content{
+    --background:var(--ion-color-light);
+    
+    ion-list{
+      background-color: var(--ion-color-light);
+      ion-item{
+        --background:var(--ion-color-light);
+      }
+    }
+    
+  }
+.title{
+    font-size: 15px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+.back_ico{
+    font-size: 1.1rem;
+    color: var(--ion-color-dark);
+}
+.lbl_header{
+    font-size: 14px;
+    font-weight: 600;
+}
+.icons{
+    font-size: 1.2rem;
+}
+.signout_btn{
+  margin: 15% auto;
+  width: 200px;
+  height: 40px;
+  --background: var(--ion-color-krypurple);
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 500;
+  color:var(--ion-color-dark);
+}
+.new_btn{
+  --background: #2c2c2c;
+    color: var(--ion-color-krypurple);
+}

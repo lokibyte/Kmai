@@ -1,0 +1,23 @@
+{
+    "app":{
+        "title":"Kamai",
+        "english":"English",
+        "malayalam":"മലയാളം",
+        "hindi":"हिंदी",
+        "telugu":"తెలుగు",
+        "urdu":"اردو",
+        "tamil":"தமிழ்",
+        "konkani":"Konkani",
+        "kannada":"ಕನ್ನಡ",
+        "oriya":"Oriya",
+        "landing":{
+            "find_ur_dream_job":"Find your dream job",
+            "find_ur_job_easily":"Find your Dream Job Easily",
+            "choose_ur_pref_language":"choose your preferred language"
+        },
+        "language":{
+            "welcome_to":"Welcome to",
+            "choose_lang":"Choose your Language"
+        }
+    }
+}

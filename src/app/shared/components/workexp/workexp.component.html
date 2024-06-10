@@ -1,0 +1,33 @@
+<ion-header>
+<ion-toolbar mode="md" color="xlight">
+  <ion-buttons slot="start">
+    <ion-button (click)="close()"> 
+      <ion-icon slot="icon-only" name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title class="titletxt">Add work experience</ion-title>
+  <ion-buttons slot="end">
+    <ion-button class="savetxt" (click)="save()"> Save </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+<ion-content mode="md" class="ion-padding">
+  <ion-input label="Job Title" label-placement="stacked" fill="outline" placeholder="Enter Job Title" class="inputfld"></ion-input>
+  <ion-input label="Company name" label-placement="stacked" fill="outline" placeholder="Enter Company name" class="inputfld"></ion-input>
+  <ion-input label="Duration" label-placement="stacked" fill="outline" placeholder="Enter start date to end date at your work" class="inputfld"></ion-input>
+  <div style="display: flex;justify-content: space-between;margin: 16px 0px;">
+    <ion-button size="small" fill="clear" mode="md" class="startbtn">
+      Start date
+      <ion-icon slot="end" class="date_ico" src="assets/icon/calendar.svg"></ion-icon>
+    </ion-button>
+    <ion-button size="small" fill="clear" mode="md" class="endbtn">
+      End date
+      <ion-icon slot="end" class="date_ico" src="assets/icon/calendar.svg"></ion-icon>
+    </ion-button>
+    <ion-button mode="md" class="addexpbtn">Additional Experience</ion-button>
+  </div>
+  <ion-item lines="none">
+    <ion-toggle color="warning">I’m still working in this job role</ion-toggle>
+  </ion-item>
+  <ion-textarea label="Description (recommneded)" label-placement="stacked" fill="outline" placeholder="Summarise about your previous or current job responsibilities" class="inputfld description_fld"></ion-textarea>
+</ion-content>

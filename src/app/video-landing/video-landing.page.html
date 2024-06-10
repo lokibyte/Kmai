@@ -1,0 +1,14 @@
+<ion-content [fullscreen]="true">
+  <div class="title">Create your video resume now</div>
+  <div class="img_container">
+    <ion-img
+      src="../../assets/imgs/people.svg"></ion-img>
+  </div>
+  <div style="display: flex;justify-content: space-evenly;">
+    <ion-button color="dark"  mode="md" size="default" fill="outline" class="btn">View sample resume</ion-button>
+    <ion-button  mode="md" size="default" fill="solid" class="btn" (click)="goTorecordVideo()">Record</ion-button>
+  </div>
+  <div style="text-align: center;margin-top: 10%;">
+    <ion-label class="skiplbl" (click)="goToHome()">Skip</ion-label>
+  </div>
+</ion-content>

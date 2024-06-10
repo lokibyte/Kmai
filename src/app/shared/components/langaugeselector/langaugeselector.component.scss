@@ -1,0 +1,103 @@
+ion-content{
+    --background: #f5f6f9;
+    --padding-start:8px;
+    --padding-end:8px;
+    .backbtn{
+        padding-top: 10px;
+        font-size: 1.5rem;
+    }    
+    .welcome_lbl_container{
+        margin-bottom: 3%;
+        margin-top: 3%;
+        text-align: center;
+    }
+    .welcome_txt{
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .description_txt{
+        font-size: 16px;
+        font-weight: 400;
+        color: #555252;
+    }
+}
+.app_title{
+    font-weight: bold;
+    font-size: 1.5rem;
+    background:linear-gradient(to right, #273c8c 0%, #273c8c 70%, var(--ion-color-link) 50%);
+    // background: linear-gradient(122deg, #1602FF 0%,#1602FF 40%, #D195F9 60%, #D195F9 100%);
+	-webkit-background-clip: text; 
+	-webkit-text-fill-color: transparent; 
+	-webkit-box-decoration-break: clone;
+}
+.item{
+    border: 1px solid #b2b2b2;
+    padding: 8px;
+    width: 45%;
+    border-radius: 30px;
+    margin: 5px 10px;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: 'intermd';
+}
+.center{
+    text-align: center;
+}
+.lang_pref_lbl{
+    color: #555252;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'intermd';
+    margin: 0 9%;
+    text-align: center;
+  }
+.continuetbn{
+    height: 45px;
+    width: 60%;
+    margin-top: 2%;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'intersb';
+    text-transform: none;
+}
+
+.selected{
+    background: var(--ion-color-link);
+    border: 1px solid var(--ion-color-link);
+    font-weight: 500;
+    font-size: 16px;
+    font-family: 'intermd';
+}
+
+// ************* Custom radio button//
+ion-radio::part(container) {
+    width: 25px;
+    height: 25px;
+  
+    border-radius: 30px;
+    border: 2px solid #ddd;
+  }
+  
+  ion-radio::part(mark) {
+    background: none;
+    transition: none;
+    transform: none;
+    border-radius: 0;
+  }
+  
+  ion-radio.radio-checked::part(container) {
+    background: #fff;
+    border-color: transparent;
+  }
+  
+  ion-radio.radio-checked::part(mark) {
+    width: 8px;
+    height: 15px;
+  
+    border-width: 0px 2px 2px 0px;
+    border-style: solid;
+    border-color: #d195f9;
+  
+    transform: rotate(45deg);
+  }

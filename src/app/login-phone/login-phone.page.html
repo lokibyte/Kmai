@@ -1,0 +1,100 @@
+
+<ion-content [fullscreen]="true" color="light" >
+  <ion-header class="ion-no-border" color="light">
+    <ion-toolbar color="light">
+      <ion-button *ngIf="!loginemail" slot="start" size="small" fill="clear" (click)="goback()"> <ion-icon slot="icon-only" name="arrow-back" class="back_ico"></ion-icon></ion-button>
+    </ion-toolbar>
+  </ion-header> 
+  <div class="welcome_lbl_container ion-padding">
+    <div class="welcome_txt">Log in to KAMAi</div>
+    <div class="description_txt">Sign in to access your account</div>
+  </div>
+  <form [formGroup]="loginphone_form" (ngSubmit)="onPhoneSubmit()" novalidate>
+    <div class="phone_ui" *ngIf="loginemail">
+      <div class="job_promotion_lbl gradient_txt" translate>app.login.tenlakh_plus</div>
+      <div class="input_container">
+        <div class="ion-margin-bottom">
+          <ion-input  formControlName="mobilenumber" mode="md" placeholder="Enter Mobile Number" type="tel" required>
+          </ion-input>
+          <div class="error_msg">
+            <ng-container *ngIf="submitmobile_num || this.loginphone_form.controls?.mobilenumber?.touched && this.loginphone_form.controls?.mobilenumber?.invalid">
+              <ng-container *ngIf="phoneErrorControl.mobilenumber.errors?.required">
+                <ion-text color="danger">Mobile Number is required.</ion-text>
+              </ng-container>
+              <ng-container *ngIf="phoneErrorControl.mobilenumber.errors?.pattern">
+                <ion-text color="danger">Please provide valid mobilenumber.</ion-text>
+              </ng-container>
+            </ng-container>
+          </div>
+          <span class="spantext">You will recieve an OTP on this number</span>
+        </div>
+
+        <div style="text-align: end;">
+          <ion-button mode="md" size="default" fill="solid"  size="small" shape="round" class="otpbtn" type="submit">Get OTP</ion-button>
+          <ion-button mode="md" size="default" fill="outline" size="small" shape="round" class="logintbn ion-margin" [routerLink]="['/login']">Use email to log in</ion-button>
+        </div>
+      </div>
+      <div class="new_member_lbl">
+        New Member? <a style="font-size: 1rem;" [routerLink]="['/register']">Signup now</a>
+      </div>
+    </div>
+  </form>
+  <form [formGroup]="loginotp_form" (ngSubmit)="onOtpSubmit()" novalidate>
+    <div class="otp_ui " *ngIf="!loginemail">
+      <div style="margin: 5px 8px;" *ngIf="phonenum.length>0">
+        <div style="font-size: 0.8rem;margin-bottom: 5px;color: #434242;">You will recieve an OTP on this number</div>
+        <div style="font-size: 0.9rem;font-weight: 700;" (click)="editPhoneNum()"><ion-text style="margin: 0 8px;">{{phonenum}}</ion-text><ion-icon  color="primary" name="create"></ion-icon></div>
+      </div>
+      <div class="input_container">
+        <div class="ion-margin-bottom">
+          <ion-label style="font-size: 13px;font-weight: 500;" color="primary" class="">Enter OTP</ion-label>
+          <ion-grid id="myotp" mode="ios" class="ion-text-center">
+              <ion-row id="myotpgridrow" mode="ios">
+                  <ion-col id="myotpgridrowcol1" mode="ios" size="2">
+                      <ion-input id="myotpotp1" formControlName="otp1" maxlength="1" minlength="1" mode="md" type="tel" class="myotpotp" style="--border-radius:6px">
+                      </ion-input>
+                  </ion-col>
+                  <ion-col id="myotpgridrowcol2" mode="ios" size="2">
+                      <ion-input id="myotpotp2" formControlName="otp2" maxlength="1" minlength="1" mode="md" type="tel" class="myotpotp" style="--border-radius:6px">
+                      </ion-input>
+                  </ion-col>
+                  <ion-col id="myotpgridrowcol3" mode="ios" size="2">
+                      <ion-input id="myotpotp3" formControlName="otp3" maxlength="1" minlength="1" mode="md" type="tel" class="myotpotp" style="--border-radius:6px">
+                      </ion-input>
+                  </ion-col>
+                  <ion-col id="myotpgridrowcol4" mode="ios" size="2">
+                      <ion-input id="myotpotp4" formControlName="otp4" maxlength="1" minlength="1" mode="md" type="tel" class="myotpotp" style="--border-radius:6px">
+                      </ion-input>
+                  </ion-col>
+                  <ion-col id="myotpgridrowcol5" mode="ios" size="2">
+                      <ion-input id="myotpotp5" formControlName="otp5" maxlength="1" minlength="1" mode="md" type="tel" class="myotpotp" style="--border-radius:6px">
+                      </ion-input>
+                  </ion-col>
+                  <ion-col id="myotpgridrowcol6" mode="ios" size="2">
+                      <ion-input id="myotpotp5" formControlName="otp6" maxlength="1" minlength="1" mode="md" type="tel" class="myotpotp" style="--border-radius:6px">
+                      </ion-input>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+          <div class="error_msg">
+            <ng-container *ngIf="submitotp || this.loginotp_form.controls?.mobilenumber?.touched && this.loginotp_form.controls?.mobilenumber?.invalid">
+              <ng-container *ngIf="otpErrorControl.otp1.errors?.required || otpErrorControl.otp2.errors?.required || otpErrorControl.otp3.errors?.required || otpErrorControl.otp4.errors?.required || otpErrorControl.otp5.errors?.required || otpErrorControl.otp6.errors?.required">
+                <ion-text color="danger">OTP is required.</ion-text>
+              </ng-container>
+              
+            </ng-container>
+          </div>
+          <!-- <span class="spantext">You'll get an OTP within 50  seconds</span> -->
+          <span class="spantext">Didn't recieve an OTP? <ion-text color="primary" style="font-weight: 700;font-size: 0.8rem;margin: 0 8px;">Resend </ion-text></span>
+        </div>
+
+        <div style="text-align: end;">
+          <!-- <ion-button mode="md" size="default" fill="solid"  size="small" shape="round" class="logintbn" (click)="login()">Log in </ion-button> -->
+          <ion-button mode="md" size="default" fill="solid"  size="small" shape="round" class="logintbn" type="submit">Log in </ion-button>
+        </div>
+          
+        
+      </div>
+    </div>
+  </form>
+</ion-content>

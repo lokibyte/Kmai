@@ -1,0 +1,107 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar mode="md" class="ion-no-border" >
+    <ion-button slot="start" size="small" fill="clear" (click)="goBack()"> <ion-icon slot="icon-only" name="arrow-back" class="font15 ion-padding-horizontal"></ion-icon></ion-button>
+    <ion-label class="title"></ion-label>
+    <ion-label mode="ios" slot="end" size="small" fill="clear"> <ion-icon slot="icon-only" name="bookmark-outline" class="font15"> </ion-icon><ion-icon slot="icon-only" src="assets/icon/share.svg" class="font15 ion-padding-horizontal"></ion-icon></ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="">
+  <div style="text-align: center;" class="ion-no-margin ion-padding">
+    <ion-img style="margin: 0 auto;height: 90px;width: 90px;border: 1px solid #d7d8da;border-radius: 50px;padding: 16px;" alt="logo" src="assets/imgs/preview.jpg" ></ion-img>
+    <div style="font-size: 18px;font-weight: 800;padding: 8px 8px;">Delivery Agent</div>
+    <div style="color: #111812;font-size: 14px;font-weight: 400;margin-bottom: 25px;">
+      
+      <span class="activelyHiring" style="padding-right: 3px;font-weight: 500;margin-right: 16px;">
+        <ion-icon src="assets/icon/flame.svg"></ion-icon>
+        <span>Actively hiring</span> 
+      </span>
+      
+      <span style="margin-right: 16px;color:#111812;font-size:14px;font-weight: 400;">Company</span>
+      
+      <span style="margin-right: 16px;color:#111812;font-size:14px;font-weight: 400;"> . Location</span>
+    </div>
+    
+    <div mode="ios" style="padding: 8px;">
+      <ion-button size="small" fill="outline" style="padding-right: 8px;font-size: 14px;height: 35px;" (click)="companyOverView()">Company Review</ion-button>
+      <ion-button size="small" style="font-size: 14px;height: 35px;">Easy Apply</ion-button>
+    </div>
+    <div style="margin-top: 16px;">
+      <div style="font-size: 14px;font-weight: 600;text-align: start;padding-bottom: 8px;">Video Job Description</div>
+      <ion-card class="video_card ion-no-margin"  style="margin: 0 auto;width: 75%;">
+        <video controls style="height: 100%;width: 100%;object-fit: cover;">
+          <source src="https://videos.pexels.com/video-files/3209663/3209663-uhd_3840_2160_25fps.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+       </video>
+       <div class="overlay">
+        <span>Play video for the reference</span>
+       </div>
+      </ion-card>
+      <div class="description" style="text-align: left;padding: 3px 0px;">
+        <ul style="padding-left: 16px;font-size: 13px;font-weight: 400;">
+          <li>
+            Lorem ipsum dolor sit amet consectetur. Erat hendrerit viverra quam et et. Feugiat interdum massa id tellus risus nulla sed pellentesque.
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur. Erat 
+          </li>
+        </ul>
+      </div>
+      <div class="alert" style="background: #FF0202;display: flex;align-items: center;padding: 1px 5px;height: 60px;margin-bottom: 10px;border-radius: 6px;">
+        <ion-icon name="warning" style="font-size: 5rem;color: #fff;"></ion-icon>
+        <ion-text style="color: #fff;flex-grow:1;margin-left: 3px;font-size: 13px;">
+          Beware of job offers that require you to pay money upfront. Legitimate employers do not ask for payment from job seekers
+        </ion-text>
+      </div>
+    </div>
+    <div class="informations">
+      <div style="font-size: 16px;font-weight: 700;text-align: left;padding: 3px 0px;">Informations</div>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <div class="header_lbl">Position</div>
+            <p class="subheader_lbl">Garbage collector</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <div class="header_lbl">Qualification</div>
+            <p class="subheader_lbl">6th pass</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <div class="header_lbl">Experience</div>
+            <p class="subheader_lbl">3 Years</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <div class="header_lbl">Job Type</div>
+            <p class="subheader_lbl">Full-Time</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <div class="header_lbl">Specialization</div>
+            <p class="subheader_lbl">Cleaning</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <div class="header_lbl">Job Location</div>
+            <p class="subheader_lbl">Street 41, Pune, INDIA</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="informations">
+      <div style="font-size: 14px;font-weight: 600;text-align: left;padding: 8px 0px;">Company Overview</div>
+      <div class="short_desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</div>
+      <div style="text-align: left;">
+        <ion-button size="small" fill="outline">Read More</ion-button>
+      </div>
+      </div>
+  </div>
+
+</ion-content>

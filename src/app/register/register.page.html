@@ -1,0 +1,49 @@
+<ion-content  mode="ios" style="--padding-start:0px;--padding-end:0px; position: relative;" [ngClass]="isDisabled ? '' : 'validreg_container'">
+  <ion-header class="ion-no-border" color="xlight">
+    <ion-toolbar color="xlight">
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>  
+  
+  <div class="container" style="background: #fff;border-radius: 7px;margin:2% 3%">
+    <div class="welcome_lbl_container ion-padding-bottom ion-padding-start">
+      <div class="welcome_txt">Register Information</div>
+      <div class="description_txt">Please fill in the required details</div>
+    </div>
+    <div class="input_container">
+      <div class="" style="margin-bottom: 10px;">
+        <ion-list style="border-radius: 10px;">
+          <ion-item lines="none">
+            <ion-label position="stacked" class="input_lbl">Full Name*</ion-label>
+            <ion-input style="border: 1px solid lightgray;border-radius: 6px;" placeholder="Enter your full Name" required type="text" [(ngModel)]="name" (ionChange)="nameChange()"></ion-input>
+          </ion-item>
+          
+          <ion-item lines="none">
+            <ion-label position="stacked" class="input_lbl">Location*</ion-label>
+            <ion-input style="border: 1px solid lightgray;border-radius: 6px;" placeholder="Enter your Location" required type="text" [(ngModel)]="location" (ionChange)="locationChange()"></ion-input>
+          </ion-item>
+        </ion-list>
+        
+        <div class="ion-padding">
+          <div class="input_lbl">Pick 5 jobs you’re interested in</div>
+          <div style="font-size: 13px;color: #545454;">Please fill in the required details</div>
+        </div>
+        <ion-searchbar class="custom" placeholder="Search for job roles" mode="md"></ion-searchbar>
+        <div class="job_roles">
+          <ion-chip class="btn" [outline]="true" mode="ios" *ngFor="let role of jobroles;let i=index" [class.selectedCls]="role.selected === true" (click)="onSelect(role,i)">
+            <ion-label >{{role.name}}</ion-label>
+          </ion-chip>
+        </div>
+        <div style="text-align: center;margin: 12px 0px;">“or”</div>
+        <div style="text-align:center">
+          <ion-button mode="md" size="default" fill="solid"  shape="round" class="openrolebtn ion-margin">Open for any Job Role</ion-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-bottom:2%">
+    <ion-button mode="md" size="default" fill="solid"  shape="round" class="registerbtn ion-margin" [ngClass]="isDisabled ? '' : 'validbtn'" (click)="doRegister()">SAVE & NEXT</ion-button>
+  </div>
+    
+    
+</ion-content>

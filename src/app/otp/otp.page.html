@@ -1,0 +1,38 @@
+<ion-content>
+<div class="otppic">
+
+</div>
+<div class="otpcontainer">
+  <div style="font-size: 24px;font-weight: 700;padding-top: 2rem;font-family: 'interbold';">Enter Code</div>
+  <p style="font-size: 12px;font-weight: 400;">Please enter the OTP we have sent to your mobile number</p>
+  <ion-grid mode="ios" class="ion-text-center;padding: 2rem 8px 1rem 8px;">
+    <ion-row  mode="ios" style="display: flex;justify-content: center;">
+        <ion-col mode="ios" size="2">
+            <ion-input [(ngModel)]="otp1" #otp_1 (keyup)="gotoNextField(otp_2,otp_1)" fill="outline" maxlength="1" minlength="1" mode="md" type="tel" class="myotpotp" style="--border-radius:6px">
+            </ion-input>
+        </ion-col>
+        <ion-col  mode="ios" size="2">
+            <ion-input [(ngModel)]="otp2" #otp_2 (keyup)="gotoNextField(otp_3,otp_1)" fill="outline" maxlength="1" minlength="1" mode="md" type="tel" class="myotpotp" style="--border-radius:6px">
+            </ion-input>
+        </ion-col>
+        <ion-col  mode="ios" size="2">
+            <ion-input [(ngModel)]="otp3" #otp_3 (keyup)="gotoNextField(otp_4,otp_1)" fill="outline" maxlength="1" minlength="1" mode="md" type="tel" class="myotpotp" style="--border-radius:6px">
+            </ion-input>
+        </ion-col>
+        <ion-col  mode="ios" size="2">
+            <ion-input [(ngModel)]="otp4" #otp_4 (keyup)="ReadFinalOtp()" fill="outline" maxlength="1" minlength="1" mode="md" type="tel" class="myotpotp" style="--border-radius:6px">
+            </ion-input>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div style="padding-top: 8px;padding-bottom: 2.5rem;display: flex;align-items: center;justify-content: center;" *ngIf="remainngtime != 0">
+    <ion-icon class="timer_ico" name="timer-outline"></ion-icon><span>{{remainngtime}} sec left</span>
+  </div>
+  <div *ngIf="remainngtime == 0" style="font-size: 12px;font-weight: 400;color:#555252;padding-bottom: 2rem;">Didn’t receive the OTP yet? </div>
+  <div  *ngIf="remainngtime == 0" class="resend_lbl" >Resend Code</div>
+  <div style="margin-top:2.5rem;">
+    <ion-button mode="md" size="default" fill="solid"  shape="round" class="verifybtn ion-margin" (click)="Verify()">Verify</ion-button>
+  </div>
+</div>
+</ion-content>

@@ -1,0 +1,79 @@
+.backicon{
+    color:var(--ion-color-link);
+}
+.phone_ico{
+    padding: 10px;
+    font-size: 1rem;
+}
+.vid_ico{
+    padding: 8px;
+    font-size: 1.5rem;
+}
+.font15{
+    font-size: 1.5rem;
+}
+
+.header_lbl{
+    color:#150B3D;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.msg_lbl{
+    font-size: 16px;
+    font-weight: 700;
+    padding-right: 8px;
+}
+ion-item{
+    padding: 8px;
+}
+
+  component-card .coworker-card p {
+    color: var(--text-light);
+  }
+  
+  .header_lbl{
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .time_lbl{
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    font-weight: 500;
+    top: 12px;
+    position: absolute;
+    right: 10px;
+  }
+.title_container{
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    align-items: end;
+}
+.me .msg{
+    font-size: 12px;
+    font-weight: 500;
+    padding: 20px 8px;
+    background: var(--ion-color-link);
+    color: #fff;
+    width: 80%;
+    border-radius: 20px 20px 20px 0px;
+}
+.other .msg{
+    font-size: 12px;
+    font-weight: 500;
+    padding: 20px 8px;
+    background: rgba(17, 24, 18, 0.1);
+    color: #000;
+    width: 80%;
+    border-radius: 20px 20px 0px 20px;
+}
+.chatinput{
+    border: 1px solid lightgray;
+    border-radius: 50px;
+    // text-align: center;
+    background: #F2F1F6;
+    --padding-start:8px;
+    --padding-end:8px;
+}

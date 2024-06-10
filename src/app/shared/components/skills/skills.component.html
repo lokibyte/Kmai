@@ -1,0 +1,29 @@
+<ion-header class="ion-no-border" >
+  
+  <ion-toolbar class="ion-no-border" color="xlight">
+    <div style="height: 30px;justify-content: end;display: flex;">
+      <ion-button size="small" fill="clear" (click)="close()"> 
+        <ion-icon  slot="icon-only" name="close" style="font-size: 2rem;"></ion-icon>
+      </ion-button>
+    </div>
+    <div class="searchbox lightbackground">
+        <ion-icon style="margin: 0px 8px;" src="../../assets/icon/search.svg" class="seach_font_sz"></ion-icon>
+        <input class="searchinput" placeholder="Search here" type="text" (input)="onSearchInputChange($event)" >
+        <ion-icon style="margin-right: 8px;" src="../../assets/icon/mic.svg" class="seach_font_sz" (click)="doSearchVoiceAction()"></ion-icon>
+        <ion-icon src="../../assets/icon/filter.svg" class="seach_font_sz" (click)="doFilterAction()"></ion-icon>
+    </div>
+  </ion-toolbar>
+  
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="ion-padding-horizontal ion-margin-bottom">
+    <div class="input_lbl">Pick 5 skills you’re interested in</div>
+    <div style="font-size: 13px;color: #545454;">Please fill in the required details</div>
+  </div>
+  <ion-searchbar class="custom" placeholder="Search for your skills" mode="md"></ion-searchbar>
+  <div class="job_roles">
+    <ion-chip class="btn" color="krypurple" [outline]="true" mode="ios" *ngFor="let role of jobroles;let i=index" [class.selectedCls]="role.selected === true" (click)="onSelect(role,i)">
+      <ion-label >{{role.name}}</ion-label>
+    </ion-chip>
+  </div>
+</ion-content>

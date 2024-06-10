@@ -1,0 +1,34 @@
+<ion-content class="ion-padding-vertical" mode="ios">
+  <ion-header>
+        <!-- <div *ngIf="segment=='saved'" class="saved_info">Want to apply from your saved option, here you go....</div>    
+        <div *ngIf="segment=='applied'" class="saved_info">Here, are the lists of your applied jobs </div>     -->
+      <div class="ion-padding-horizontal">
+        <ion-segment value="saved" [(ngModel)]="segment">
+          <ion-segment-button value="saved">
+            <ion-label class="title_lbl" [class.selectedbtn]="segment=='saved'">Saved Jobs</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="applied">
+            <ion-label class="title_lbl" [class.selectedbtn]="segment=='applied'">Applied Jobs</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+  </ion-header>
+  
+  <div [ngSwitch]="segment">
+    <div class="job_div" *ngSwitchCase="'saved'">
+      <ion-list class="ion-no-margin" lines="none">
+        <div *ngFor=" let job of savedjobs">
+          <app-savedjob [job]="job" (onEasyApply)="saveEasyAppy(job)"></app-savedjob>
+        </div>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase="'applied'" class="job_div">
+      <ion-list class="ion-no-margin">
+        <div *ngFor=" let job of appliedjobs" >
+          <app-appliedjob [job]="job"></app-appliedjob>
+        </div>
+      </ion-list>
+    </div>
+  </div>
+
+</ion-content>

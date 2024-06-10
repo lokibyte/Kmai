@@ -1,0 +1,22 @@
+.title{
+    text-align: center;
+    margin-top: 10%;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ion-color-primary);
+    font-family: 'interbold';
+}
+.btn{
+    width: 45%;
+    height: 36px;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: none;
+    --border-radius: 10px;
+    font-family: 'intermd';
+}
+
+.skiplbl{
+    text-decoration: underline;
+    color: rgba(17, 24, 18, 0.6);
+}

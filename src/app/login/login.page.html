@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  
+  <div class="welcome_lbl_container ion-padding">
+    <div class="welcome_txt" translate>app.language.welcome_to <span class="app_title" translate>app.title</span></div>
+    <div class="description_txt" >Login to your account!</div>
+  </div>
+  
+  <div class="ion-padding">
+    <ion-input  class="inputcls" [(ngModel)]="phone" mode="md"  fill="outline" color="primary" type="tel" placeholder="Mobile Number"></ion-input>
+    <div style="text-align: center;margin: 12px 0px;font-size: 14px;font-weight: 400;font-family: 'intermd';">“or”</div>
+    <ion-input  class="inputcls" [(ngModel)]="email" mode="md"  fill="outline" color="primary" type="email" placeholder="Email"></ion-input>
+  </div>
+  
+  <div class="center">
+    <ion-button mode="md"  style="--background: var(--ion-color-krypurple);color: #fff;width: 85%;margin-top: 20%;font-size: 16px;font-weight: 600;text-transform: none;height: 60px;" (click)="doLogin()">Login</ion-button>
+  </div>
+  <div style="margin-top:15%;text-align:center;">
+    <span style="color: #111812;font-size:14px;font-weight:400;"></span>I’m a New user, <ion-text style="">Sign Up</ion-text>
+  </div>
+  <div style="text-align:center;margin-top:6%;">
+    <ion-button mode="md" size="default" fill="solid"  shape="round" class="signupbtn ion-margin" (click)="doSignUp()">Sign Up</ion-button>
+  </div>
+</ion-content>

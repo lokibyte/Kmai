@@ -1,0 +1,37 @@
+<ion-card class="rec_job_card" (click)="doEasyApply()">
+  <ion-item>
+    <ion-avatar slot="start" class="imgavatar">
+      <img [src]="'assets/icon/c_logo.svg'">
+    </ion-avatar>
+    <ion-label class="recent">
+      {{job?.company}}
+      <p style="color: rgba(17, 24, 18, 0.5);font-weight: 400;font-size: 12px;">
+         {{job?.location}} 
+      </p>
+    </ion-label>
+    <ion-text slot="end" class="rec_job_icons" mode="ios">
+      <span style="font-weight: 600;">{{job?.rating}} <ion-icon src="assets/icon/Star.svg"></ion-icon> <ion-icon src="assets/icon/thrash.svg" style="margin-left: 8px;"></ion-icon></span>
+    </ion-text>
+  </ion-item>
+  <div>
+    <ion-item style="--background: #F9F8FD;">
+      <div class="btm_text_lbl" slot="start">
+        <div style="margin-left: 12px;font-size: 16px;font-weight: 700;padding-bottom: 5px;color:#111812">{{job?.post}}</div>
+        <div style="font-weight: 500;margin-left: 12px;margin-bottom: 5px;font-size: 14px;">₹{{job?.salary}}</div>
+        <ion-chip>
+          {{job?.type}}
+        </ion-chip>
+        <ion-chip>
+          {{job?.position}}
+        </ion-chip>
+        <!-- <div *ngIf="job?.hiring == 'active'" class="activelyHiring"><ion-icon src="assets/icon/flame.svg"></ion-icon> <span style="margin-left:5px;">Actively Hiring</span></div> -->
+      </div>
+      <div style="width: 100%;text-align: end;">
+        <div style="color:#111812;font-size: 12px;margin-top: 8px;">Posted <span style="font-weight: 500;" [ngStyle]="{'color':job?.posted=='Just Now'? '#f59300':''}">{{job?.posted}}</span></div>
+        <ion-icon slot="end" src="assets/icon/fwd_ico.svg" style="margin-top: 35px;height: 33px;width: 33px;"></ion-icon>
+      </div>
+    </ion-item>
+    
+    
+  </div>
+</ion-card>

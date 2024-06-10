@@ -1,0 +1,47 @@
+ion-searchbar.custom {
+  
+    --border-radius: 10px;
+    margin-left: 6px;
+  }
+  .job_roles{
+    padding: 16px 8px;
+  }
+  .job_roles {
+    
+    .btn {
+      display: inline-block;
+      font-size: 12px;
+      height: 27px;
+      font-weight: 600;
+    }
+    .selectedCls{
+        background-color:#F59300;
+      color: white;
+    }
+  }
+.searchbox{
+    border: 1px solid #a5a5a5;
+    border-radius: 20px;
+    margin: 10px 16px;
+    display: flex;
+    align-items: center;
+    padding: 2px 5px;
+  }
+  .searchinput{
+    height: 40px;
+    width: 80%;
+    border: 0px !important;
+    background: #fff !important;
+    color: #000;
+    
+  }
+  .lightbackground{
+    background: #fff;
+  }
+  .searchinput:focus,.searchinput:focus-visible{
+    border: #fff;
+    outline: 0px;
+  }
+  .seach_font_sz{
+    font-size:1.5rem
+  }

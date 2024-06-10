@@ -1,0 +1,160 @@
+ion-content{
+
+  --padding-start:8px;
+  --padding-end:8px;
+  .input_container{
+      padding: 0px 8px;
+  }
+  .rem_forgt_lbls{
+      margin-top: 10px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      font-size: 14px;
+  }
+  .welcome_lbl_container{
+      // margin-bottom: 15%;
+      // margin-top: 10%;
+  }
+  .welcome_txt{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'intermd';
+  }
+  .description_txt{
+      font-size: 0.8rem;
+      font-weight: 300;
+      // font-style: italic;
+      color: #434242;
+      margin-top: 8px;
+  }
+  .job_promotion_lbl{
+    color: #434242;
+    margin-bottom: 15%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: 6%;
+  }
+  
+}
+.gradient_txt{
+background: linear-gradient(148deg, #1602FF 0%, #1602FF 40%, #D195F9 60%, #992ab9 100%);;
+-webkit-background-clip: text; 
+-webkit-text-fill-color: transparent; 
+-webkit-box-decoration-break: clone;
+}
+ion-input{
+  background: #fff;
+  border-radius: 10px;
+  padding-left: 10px !important;
+}
+ion-checkbox {
+  --size: 22px;
+  font-size: 1rem;
+  font-weight: 400;
+  // --checkbox-background-checked: #D195F9;
+}
+
+ion-checkbox::part(container) {
+  border-radius: 6px;
+  // border: 2px solid #D195F9;
+}
+.remember{
+  align-items: center;
+  display: flex;
+  .rem_lbl{
+      margin-left:5px;
+  }
+}
+
+.registerbtn{
+  height: 36px;
+  width: 90%;
+  font-size: 14px;
+  letter-spacing: 0px;
+  text-transform: initial !important;
+  --background: #BEBEBE;
+  color:#000;
+}
+.otpbtn{
+  height: 40px;
+  width: 30%;
+  font-size: 11px;
+  letter-spacing: 0px;
+  font-weight: 700;
+  text-transform: initial !important;
+}
+.new_member_lbl{
+  text-align: center;
+  margin-top: 16px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.policytext{
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0px;
+  color: #737373;
+  text-align: center;
+}
+
+ion-searchbar.custom {
+  
+  --border-radius: 10px;
+}
+.job_roles{
+  padding: 16px 0px;
+  text-align: center;
+}
+.job_roles {
+  
+  .btn {
+    display: inline-block;
+    font-size: 12px;
+    height: 27px;
+    font-weight: 600;
+    border-color: var(--ion-color-krypurple-tint);
+    color:var(--ion-color-krypurple-tint);
+  }
+  .selectedCls{
+  	background-color:var(--ion-color-krypurple-tint);
+    color: white;
+  }
+}
+
+.ortxt {
+  display: flex;
+  flex-direction: row;
+}
+.ortxt:before, .ortxt:after{
+  content: "";
+  flex: 1 1;
+  border-bottom: 1px solid;
+  margin: auto;
+}
+.ortxt:before {
+  margin-right: 10px
+}
+.ortxt:after {
+  margin-left: 10px
+}
+.input_lbl{
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'intermd';
+}
+.validbtn{
+  --background:var(--ion-color-krypurple-tint);
+  color:#fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+.openrolebtn{
+  text-transform: initial;
+}
+.validreg_container{
+  --background: url('../../assets/imgs/reg_background.png') 0 0/100% 100% no-repeat;
+  transition: background-color 0.2s ease-in-out;
+}
