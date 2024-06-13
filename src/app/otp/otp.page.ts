@@ -15,6 +15,7 @@ export class OtpPage implements OnInit {
   otp4='';
   // Set the time in seconds
   remainngtime = 30;
+  interval:any;
   constructor(public router: Router,private toastController: ToastController) { }
 
   ngOnInit() {
@@ -49,6 +50,7 @@ export class OtpPage implements OnInit {
   }
   Verify(){
     if(this.otp1 && this.otp2 && this.otp3 && this.otp4){
+      clearInterval(this.interval);
       if(localStorage.userreg=='true'){
         this.router.navigate(['/register']);
       }else{
@@ -73,12 +75,12 @@ export class OtpPage implements OnInit {
 
     // If the time is up, clear the interval
     if (this.remainngtime === 0) {
-      clearInterval(interval);
+      clearInterval(this.interval);
       console.log("Time's up!");
     }
   };
 
   // Start the countdown timer
-  const interval = setInterval(countdown, 1000);
+  this.interval = setInterval(countdown, 1000);
   }
 }

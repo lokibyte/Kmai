@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { LoaderComponent } from './loader.component';
+import { VidPersonalComponent } from './vid-personal.component';
 
-describe('LoaderComponent', () => {
-  let component: LoaderComponent;
-  let fixture: ComponentFixture<LoaderComponent>;
+describe('VidPersonalComponent', () => {
+  let component: VidPersonalComponent;
+  let fixture: ComponentFixture<VidPersonalComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoaderComponent ],
+      declarations: [ VidPersonalComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(LoaderComponent);
+    fixture = TestBed.createComponent(VidPersonalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

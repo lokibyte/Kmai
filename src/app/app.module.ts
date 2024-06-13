@@ -14,7 +14,7 @@ import {LangaugeselectorComponent} from './shared/components/langaugeselector/la
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LangaugeService } from './shared/services/langauge.service';
-
+import { MediaCapture}  from '@awesome-cordova-plugins/media-capture/ngx'
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
@@ -36,6 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     AppRoutingModule],
   providers: [
+    MediaCapture,
     LangaugeService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent]

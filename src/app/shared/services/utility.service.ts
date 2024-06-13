@@ -33,28 +33,35 @@ export class UtilityService {
     this.userLoggedIn.next(isloggedin);
   }
 
-  setCurrentStep(step: StepModel): void {
-    this.currentStep$.next(step);
+  // setCurrentStep(step: StepModel): void {
+  //   this.currentStep$.next(step);
+  // }
+
+  // getCurrentStep(): Observable<StepModel> {
+  //   return this.currentStep$.asObservable();
+  // }
+
+  // getSteps(): Observable<StepModel[]> {
+  //   return this.steps$.asObservable();
+  // }
+
+  // moveToNextStep(): void {
+  //   const index = this.currentStep$.value.stepIndex;
+
+  //   if (index < this.steps$.value.length) {
+  //     this.currentStep$.next(this.steps$.value[index]);
+  //   }
+  // }
+
+  // isLastStep(): boolean {
+  //   return this.currentStep$.value.stepIndex === this.steps$.value.length;
+  // }
+  fromlocation='';
+  setfromlocation(loc:string){
+    this.fromlocation = loc;
   }
-
-  getCurrentStep(): Observable<StepModel> {
-    return this.currentStep$.asObservable();
-  }
-
-  getSteps(): Observable<StepModel[]> {
-    return this.steps$.asObservable();
-  }
-
-  moveToNextStep(): void {
-    const index = this.currentStep$.value.stepIndex;
-
-    if (index < this.steps$.value.length) {
-      this.currentStep$.next(this.steps$.value[index]);
-    }
-  }
-
-  isLastStep(): boolean {
-    return this.currentStep$.value.stepIndex === this.steps$.value.length;
+  getfromlocation(){
+    return this.fromlocation;
   }
   
 }

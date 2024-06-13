@@ -1,0 +1,24 @@
+<fieldset style="border: none;height: 90%;">
+  <div style="height: 100%;border: 1px solid;border-radius: 8px;">
+    <!-- <h2 class="fs-title">Skill set</h2> -->
+    <div class="video_container">
+      <ion-button mode="md" size="small" fill="clear" (click)="recordSkillVideo()">
+        <ion-icon slot="icon-only" name="videocam" style="font-size: 32px;"></ion-icon>
+      </ion-button>
+      <div style="height: 85%;margin: 8px;">
+        <!-- Preview Video -->
+        <video id="skill-recorded" class="vid_ele"  controls [src]="urlskillVideo" ></video>
+      </div>
+    </div>
+    <div class="action_container" *ngIf="urlskillVideo.length > 0">
+      <ion-icon src="assets/icon/play.svg" (click)="playVideo()"></ion-icon>
+      <ion-icon src="assets/icon/Stop.svg" (click)="stopVideo()"></ion-icon>
+    </div>
+  </div>
+  <div class="actionbtns">
+    <!-- <ion-button mode="md" fill="outline" class="btn" color="primary" (click)="prevClick('education')">Back</ion-button>
+    <ion-button mode="md" class="btn btncolor" (click)="nextClick('extrainfo')">Next</ion-button> -->
+    
+  </div>
+    
+</fieldset>

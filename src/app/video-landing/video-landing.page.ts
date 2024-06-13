@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { UtilityService } from '../shared/services/utility.service';
 @Component({
   selector: 'app-video-landing',
   templateUrl: './video-landing.page.html',
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class VideoLandingPage implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor(public router: Router,private utility:UtilityService) { }
 
   ngOnInit() {
   }
@@ -19,6 +19,7 @@ export class VideoLandingPage implements OnInit {
     this.router.navigate(['/home']);  
   }
   goTorecordVideo(){
+    
     this.router.navigate(['/video-resume']);  
   }
 }

@@ -43,13 +43,13 @@ export class AppComponent implements OnInit{
       });
 
     let isLoggedin = localStorage.isLoggedin;
-    // if(isLoggedin=='true'){
-    //   this.router.navigate(['/home']);
-    // }else if(isLoggedin=='false'){
-    //   this.router.navigate(['/login']);
-    // }else{
-    //   this.router.navigate(['/landing']);
-    // }
+    if(isLoggedin=='true'){
+      this.router.navigate(['/home']);
+    }else if(isLoggedin=='false'){
+      this.router.navigate(['/login']);
+    }else{
+      this.router.navigate(['/landing']);
+    }
   }
 
 }

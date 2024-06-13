@@ -8,6 +8,12 @@ import { VideoResumePageRoutingModule } from './video-resume-routing.module';
 
 import { VideoResumePage } from './video-resume.page';
 
+import { VidIntroComponent } from '../shared/components/VideoResume/vid-intro/vid-intro.component';
+import { VidPersonalComponent } from '../shared/components/VideoResume/vid-personal/vid-personal.component';
+import { VidEducationalComponent } from '../shared/components/VideoResume/vid-educational/vid-educational.component';
+import { VidSkillComponent } from '../shared/components/VideoResume/vid-skill/vid-skill.component';
+import { VidExtraInfoComponent } from '../shared/components/VideoResume/vid-extra-info/vid-extra-info.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +21,13 @@ import { VideoResumePage } from './video-resume.page';
     IonicModule,
     VideoResumePageRoutingModule
   ],
-  declarations: [VideoResumePage]
+  declarations: [
+    VideoResumePage,
+    VidIntroComponent,
+    VidPersonalComponent,
+    VidEducationalComponent,
+    VidSkillComponent,
+    VidExtraInfoComponent
+  ]
 })
 export class VideoResumePageModule {}

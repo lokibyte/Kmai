@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { UtilityService } from '../shared/services/utility.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -92,13 +92,14 @@ export class RegisterPage implements OnInit {
     }
   ];
   
-  constructor(public router: Router) { }
+  constructor(public router: Router,private utility:UtilityService) { }
 
   ngOnInit() {
   }
   doRegister(){
     console.info("this.isDisabled",this.isDisabled);
     if(!this.isDisabled){
+      this.utility.setfromlocation('register');
       this.router.navigate(['/video-landing']);  
     }
     
