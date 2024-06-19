@@ -26,9 +26,17 @@ export class HttpService {
 		const httpOptions = {
 		    headers: new HttpHeaders(_httpOptions)
 		 };
+		 console.info("http",reqObj,BASE_URL);
 		if(!this.isConnected){
 			return throwError({status:this.status,msg:'The internet connection appears to be offline.Try again'});
 		}
 		return this.http.post(url,reqObj, httpOptions);
 	}
+	httpGet(url:any): Observable<any> {
+		const _url = BASE_URL + url;
+	  if(!this.isConnected){
+		  return throwError({status:this.status,msg:'The internet connection appears to be offline.Try again'});
+	  }
+	  return this.http.get(_url);
+  }
 }

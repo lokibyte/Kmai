@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable,Subject } from 'rxjs';
+import { PhoneNumberUtil, PhoneNumber } from 'google-libphonenumber';
 
 export interface StepModel {
   stepIndex: number;
@@ -32,30 +33,8 @@ export class UtilityService {
   set userLoggedin(isloggedin:boolean){
     this.userLoggedIn.next(isloggedin);
   }
-
-  // setCurrentStep(step: StepModel): void {
-  //   this.currentStep$.next(step);
-  // }
-
-  // getCurrentStep(): Observable<StepModel> {
-  //   return this.currentStep$.asObservable();
-  // }
-
-  // getSteps(): Observable<StepModel[]> {
-  //   return this.steps$.asObservable();
-  // }
-
-  // moveToNextStep(): void {
-  //   const index = this.currentStep$.value.stepIndex;
-
-  //   if (index < this.steps$.value.length) {
-  //     this.currentStep$.next(this.steps$.value[index]);
-  //   }
-  // }
-
-  // isLastStep(): boolean {
-  //   return this.currentStep$.value.stepIndex === this.steps$.value.length;
-  // }
+  
+  //to get route back to language selector modal in diff page i.e login and home
   fromlocation='';
   setfromlocation(loc:string){
     this.fromlocation = loc;
@@ -63,5 +42,27 @@ export class UtilityService {
   getfromlocation(){
     return this.fromlocation;
   }
-  
+  validateEmail(email:string){
+    let emailfilter = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ ;
+    return  emailfilter.test(email); 
+  }
+
+  validatePhoneNumber(mobilenumber:string,countrycode:string="IN"){
+    console.info(countrycode);
+    if(mobilenumber){
+      let numberutil = PhoneNumberUtil.getInstance();
+      const phonenumber = numberutil.parseAndKeepRawInput(mobilenumber, countrycode.toUpperCase());
+      return numberutil.isValidNumber(phonenumber);
+    }else{
+      return false;
+    }
+    
+  }
+
+  getValidPhoneNumber(phone:string,countrycode:string){
+    let numberutil = PhoneNumberUtil.getInstance();
+    console.info(PhoneNumber);
+    // const phonenumber = numberutil.parseAndKeepRawInput(phone, countrycode.toUpperCase());
+    // numberutil.format(phonenumber, PNF.INTERNATIONAL)
+  }
 }
