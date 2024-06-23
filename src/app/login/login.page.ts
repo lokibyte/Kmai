@@ -5,6 +5,7 @@ import { ToastController } from '@ionic/angular'
 import { UtilityService } from '../shared/services/utility.service';
 import { LoginService } from '../shared/services/api/login.service';
 import { LoaderService } from '../shared/services/loader.service';
+import { UserService } from '../shared/services/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -21,7 +22,8 @@ export class LoginPage implements OnInit {
               private toastController: ToastController,
               private utility:UtilityService,
               private loginService:LoginService,
-              private loader:LoaderService
+              private loader:LoaderService,
+              private userService:UserService
             ) { }
 
   ngOnInit() {
@@ -39,7 +41,28 @@ export class LoginPage implements OnInit {
     await toast.present();
   }
   doLogin(){
+    let _errmsg = "Please Enter Mobile Number/Email to Login";
+    this.doValidation(_errmsg);
     
+  }
+  onLogin(reqobj:any){
+    this.loader.showLoader("Signin..");
+    this.loginService.getOtp(reqobj).subscribe( (data) => {
+      this.loader.hideLoader();
+      console.info("response",data);
+      this.userService.setuserloginType(reqobj);
+      this.router.navigate(['/otp']);
+    }
+    ,(err) => {
+       this.loader.hideLoader();
+      console.log("POST call in error", err);
+    }
+    ,() => {
+      console.log("The POST observable is now completed.");
+    }
+   )
+  }
+  doValidation(errmsg:string){
     if(this.phone || this.email){
       let _validphone = this.utility.validatePhoneNumber(this.phone,"IN");
       let _validemail = this.utility.validateEmail(this.email);
@@ -64,7 +87,6 @@ export class LoginPage implements OnInit {
           console.info("login reqobj1",reqobj);
           this.onLogin(reqobj);
           return;
-          // this.utility.getValidPhoneNumber("9841311167","IN");
         }
         if(_validemail){
           reqobj.loginType = 'EMAIL';
@@ -73,38 +95,19 @@ export class LoginPage implements OnInit {
           this.onLogin(reqobj);
           return;
         }
-          
-          // this.utility.getValidPhoneNumber("9841311167","IN")
-        // this.loginService.doLogin()
-        // this.router.navigate(['/otp']);
       }else{
-        this.presentToast('top',"Please Enter Mobile Number/Email to Login");  
+        this.presentToast('top',errmsg);  
       }
 
     }else{
-      this.presentToast('top',"Please Enter Mobile Number/Email to Login");
+      this.presentToast('top',errmsg);
     }
   }
-  onLogin(reqobj:any){
-    this.loader.showLoader("Signin..");
-    this.loginService.doLogin(reqobj).subscribe( (data) => {
-      this.loader.hideLoader();
-      console.info("response",data);
-    }
-    ,(err) => {
-       this.loader.hideLoader();
-      console.log("POST call in error", err);
-    }
-    ,() => {
-      console.log("The POST observable is now completed.");
-    }
-   )
-  }
-  
   doSignUp(){
     localStorage.setItem('userreg','true');
     if(this.phone || this.email){
-      this.router.navigate(['/otp']);
+      let _errmsg ="Please Enter Mobile Number/Email to Signup";
+      this.doValidation(_errmsg);
       
     }else{
       this.presentToast('bottom',"Please Enter Mobile Number/Email to Signup");

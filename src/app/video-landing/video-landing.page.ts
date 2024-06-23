@@ -14,7 +14,6 @@ export class VideoLandingPage implements OnInit {
   }
   goToHome(){
     
-    localStorage.setItem('isLoggedin','true');
     localStorage.removeItem('userreg');
     this.router.navigate(['/home']);  
   }

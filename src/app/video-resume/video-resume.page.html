@@ -46,8 +46,10 @@
             <ng-container *ngIf="currentcard==5">
               <app-vid-extra-info></app-vid-extra-info>
               <div class="actionbtns">
-                <ion-button mode="md" fill="outline" class="btn"  (click)="prevClick('skill')">Back</ion-button>
-                <ion-button mode="md" class="btn btncolor" (click)="submitClick()">Submit</ion-button>
+                <!-- <ion-button mode="md" fill="outline" class="btn"  (click)="prevClick('skill')">Back</ion-button>
+                <ion-button mode="md" class="btn btncolor" (click)="submitClick()">Submit</ion-button> -->
+                <ion-button mode="md" fill="outline" class="btn"  (click)="doPreview()">Preview</ion-button>
+                <ion-button mode="md" class="btn btncolor" (click)="doSave()">Save</ion-button>
                 
               </div>
             </ng-container>

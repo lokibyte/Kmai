@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UtilityService } from '../shared/services/utility.service';
+import { UserService } from '../shared/services/user.service';
+import { RegisterService } from '../shared/services/api/register.service';
+import { LoaderService } from '../shared/services/loader.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -91,8 +95,14 @@ export class RegisterPage implements OnInit {
       name:'Barber'
     }
   ];
-  
-  constructor(public router: Router,private utility:UtilityService) { }
+  preferredJobRoles:any[]=[];
+  constructor(
+    public router: Router,
+    private utility:UtilityService,
+    private registerService:RegisterService,
+    private userService:UserService,
+    private loader:LoaderService,
+  ) { }
 
   ngOnInit() {
   }
@@ -100,7 +110,36 @@ export class RegisterPage implements OnInit {
     console.info("this.isDisabled",this.isDisabled);
     if(!this.isDisabled){
       this.utility.setfromlocation('register');
-      this.router.navigate(['/video-landing']);  
+      
+      let usr = this.userService.getUser();
+      this.selectedroles.every((itm:any)=>this.preferredJobRoles.push({ "preferredJobRoleName": itm.name }));
+
+      let reqobj = {
+            "fullName": this.name,
+            "location": this.location,
+            "preferredJobRoles": this.preferredJobRoles
+            
+         };
+         this.loader.showLoader("User Registration progressing..")
+      this.registerService.updateUserInfo(reqobj,usr).subscribe( (data:any) => {
+        this.loader.hideLoader();
+        console.info("updateUserInfo response",data);
+        let usr = this.userService.getUser();
+      
+      let _usr = {...usr,...data};
+      this.userService.setuser(_usr);
+        console.info(this.userService.getUser());
+        localStorage.setItem('isLoggedin','true');
+          this.router.navigate(['/video-landing']);  
+      }
+      ,(err:any) => {
+         this.loader.hideLoader();
+        console.log("Get call in error", err);
+      }
+      ,() => {
+        console.log("The POST observable is now completed.");
+      }
+     );
     }
     
   }

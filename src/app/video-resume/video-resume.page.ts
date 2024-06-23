@@ -4,6 +4,7 @@ import { UtilityService,StepModel } from '../shared/services/utility.service';
 import { Router } from '@angular/router';
 import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions,CaptureVideoOptions}  from '@awesome-cordova-plugins/media-capture/ngx'
 import { Capacitor } from '@capacitor/core';
+import { ToastController } from '@ionic/angular'
 
 @Component({
   selector: 'app-video-resume',
@@ -27,7 +28,7 @@ export class VideoResumePage implements OnInit {
   skillcard = false;
   extracard = false;
 
-  constructor(public mediaCapture: MediaCapture,public router: Router,private utility:UtilityService) {}
+  constructor(public mediaCapture: MediaCapture,public router: Router,private utility:UtilityService,private toastController: ToastController,) {}
   ionViewDidEnter(){
     // let url = "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4";
     // this.recordedVideo = document.getElementById('personal-recorded') as HTMLVideoElement;
@@ -86,5 +87,21 @@ export class VideoResumePage implements OnInit {
       this.router.navigate(['/home/profile']);
     }
     
+  }
+  doPreview(){
+    this.presentToast('top',"Preview Video development is in Progress....");  
+  }
+  doSave(){
+    this.presentToast('top',"Save Video development is in Progress....");
+  }
+  async presentToast(position: 'top' | 'middle' | 'bottom',message:string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 1500,
+      position: position,
+      color:'danger'
+    });
+
+    await toast.present();
   }
 }

@@ -42,14 +42,14 @@ export class AppComponent implements OnInit{
         this._isLoggedin = isUserLoggedin;
       });
 
-    let isLoggedin = localStorage.isLoggedin;
-    if(isLoggedin=='true'){
-      this.router.navigate(['/home']);
-    }else if(isLoggedin=='false'){
-      this.router.navigate(['/login']);
-    }else{
-      this.router.navigate(['/landing']);
-    }
+    // let isLoggedin = localStorage.isLoggedin;
+    // if(isLoggedin=='true'){
+    //   this.router.navigate(['/home']);
+    // }else if(isLoggedin=='false'){
+    //   this.router.navigate(['/login']);
+    // }else{
+    //   this.router.navigate(['/landing']);
+    // }
   }
 
 }

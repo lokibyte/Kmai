@@ -13,30 +13,37 @@ export class HttpService {
   isConnected = true;
   constructor(private http: HttpClient) { }
 
-  httpPost(_url:any,reqObj:any, _httpOptions:any):Observable<any> {
-		const url = BASE_URL + _url;
-	
-		//fake post url
-		// const url = "https://reqres.in/api/users";
-		// reqObj = {
-	 //        name: "paul rudd",
-	 //        movies: ["", "Role Models"]
-	 //    };
-
-		const httpOptions = {
-		    headers: new HttpHeaders(_httpOptions)
-		 };
-		 console.info("http",reqObj,BASE_URL);
+	// GET API call
+	httpGet(url:any,headers:any): Observable<any> {
+		const _url = BASE_URL + url;
+		const httpoptions = { headers: headers };
 		if(!this.isConnected){
 			return throwError({status:this.status,msg:'The internet connection appears to be offline.Try again'});
 		}
-		return this.http.post(url,reqObj, httpOptions);
+		return this.http.get(_url,httpoptions);
+	} 
+	// POST API call
+	httpPost(_url:any,reqObj:any, headers:any):Observable<any> {
+			const url = BASE_URL + _url;
+			
+			const httpoptions = { headers: headers };
+			
+			if(!this.isConnected){
+				return throwError({status:this.status,msg:'The internet connection appears to be offline.Try again'});
+			}
+			return this.http.post(url,reqObj, httpoptions);
 	}
-	httpGet(url:any): Observable<any> {
-		const _url = BASE_URL + url;
-	  if(!this.isConnected){
-		  return throwError({status:this.status,msg:'The internet connection appears to be offline.Try again'});
-	  }
-	  return this.http.get(_url);
-  }
+	// PUT API call
+	httpPut(_url:any,reqObj:any, headers:any):Observable<any> {
+			const url = BASE_URL + _url;
+			
+			const httpoptions = { headers: headers };
+			
+			if(!this.isConnected){
+				return throwError({status:this.status,msg:'The internet connection appears to be offline.Try again'});
+			}
+			return this.http.put(url,reqObj, httpoptions);
+	}
+	
+	
 }
